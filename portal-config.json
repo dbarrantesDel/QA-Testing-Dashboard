@@ -1,0 +1,6568 @@
+{
+  "meta": {
+    "configVersion": "1.0",
+    "note": "All program-specific content lives in this file. Values set to null display as 'To be confirmed by project team'. The 'sampleData' block holds fictional demo records: delete it (or leave it empty) for a real program."
+  },
+  "program": {
+    "name": "Lime",
+    "clientName": "Lime (fictional sample client)",
+    "title": "QA & Testing Knowledge Portal",
+    "tagline": "How testing works on the {{program}} Oracle Fusion Cloud ERP program.",
+    "overview": "{{program}} is implementing Oracle Fusion Cloud ERP for its quote-to-cash and related financial processes. This portal is the single place to learn how testing works on the program, find templates and criteria, and see how the testing dashboard is defined. It is a reference site: it does not connect to live Jira or ALM, but it can load exports from them.",
+    "goLiveDate": null,
+    "currentPhase": null,
+    "dashboard": {
+      "url": null,
+      "label": "Open the testing dashboard"
+    },
+    "defectSource": {
+      "options": [
+        "ALM",
+        "Jira",
+        "Both"
+      ],
+      "selected": "Both"
+    },
+    "euTaxCountry": null
+  },
+  "resultStatuses": [
+    {
+      "id": "Passed",
+      "def": "Executed and the actual result matched the expected result.",
+      "color": "#86BC25"
+    },
+    {
+      "id": "Failed",
+      "def": "Executed and the actual result did not match the expected result.",
+      "color": "#DA291C"
+    },
+    {
+      "id": "Blocked",
+      "def": "Could not be completed because of a defect, data or environment dependency.",
+      "color": "#E8A317"
+    },
+    {
+      "id": "Not Run",
+      "def": "Not yet executed. Never counted as Passed.",
+      "color": "#75787B"
+    },
+    {
+      "id": "In Progress",
+      "def": "Execution has started but no result is recorded yet.",
+      "color": "#0076A8"
+    },
+    {
+      "id": "Not Applicable",
+      "def": "Removed from the planned scope for this cycle. Excluded from rates and never counted as Passed.",
+      "color": "#C4C6C8"
+    }
+  ],
+  "pages": {
+    "home": {
+      "nav": "Home",
+      "title": "See where testing stands on {{program}}"
+    },
+    "strategy": {
+      "nav": "Test strategy",
+      "title": "Plan the testing approach"
+    },
+    "cycles": {
+      "nav": "Test cycles",
+      "title": "Know the rules of each test cycle"
+    },
+    "criteria": {
+      "nav": "Entry and exit criteria",
+      "title": "Check entry and exit criteria before each cycle"
+    },
+    "scope": {
+      "nav": "Scope and coverage",
+      "title": "Find what is in scope and who covers it"
+    },
+    "rice": {
+      "nav": "RICE objects",
+      "title": "Track reports, interfaces, conversions and extensions"
+    },
+    "data": {
+      "nav": "Data conversion",
+      "title": "Confirm data conversion readiness"
+    },
+    "security": {
+      "nav": "Security and access",
+      "title": "Confirm security and access readiness"
+    },
+    "tester": {
+      "nav": "Tester guide",
+      "title": "Run scripts and record results"
+    },
+    "uat": {
+      "nav": "Business user UAT guide",
+      "title": "Complete UAT and give your sign-off"
+    },
+    "defects": {
+      "nav": "Defect management",
+      "title": "Log, triage and resolve defects"
+    },
+    "trace": {
+      "nav": "Traceability",
+      "title": "Trace every story to its defects"
+    },
+    "metrics": {
+      "nav": "Metrics and KPIs",
+      "title": "Read and calculate the KPIs correctly"
+    },
+    "rag": {
+      "nav": "Semaphore (RAG) rules",
+      "title": "Apply Green, Amber and Red consistently"
+    },
+    "sources": {
+      "nav": "Data sources and integration",
+      "title": "Connect Jira, ALM and Excel data to the dashboard"
+    },
+    "quality": {
+      "nav": "Data quality",
+      "title": "Find and fix data quality issues"
+    },
+    "roles": {
+      "nav": "Roles and responsibilities",
+      "title": "Know who does what"
+    },
+    "templates": {
+      "nav": "Templates and checklists",
+      "title": "Copy templates and checklists"
+    },
+    "glossary": {
+      "nav": "Glossary and FAQ",
+      "title": "Look up terms and common questions"
+    },
+    "assumptions": {
+      "nav": "Assumptions and open items",
+      "title": "Review assumptions and open items"
+    }
+  },
+  "navGroups": [
+    {
+      "label": "Start",
+      "pages": [
+        "home"
+      ]
+    },
+    {
+      "label": "Plan",
+      "pages": [
+        "strategy",
+        "cycles",
+        "criteria",
+        "scope"
+      ]
+    },
+    {
+      "label": "Prepare",
+      "pages": [
+        "rice",
+        "data",
+        "security"
+      ]
+    },
+    {
+      "label": "Execute",
+      "pages": [
+        "tester",
+        "uat",
+        "defects",
+        "trace"
+      ]
+    },
+    {
+      "label": "Measure",
+      "pages": [
+        "metrics",
+        "rag",
+        "sources",
+        "quality"
+      ]
+    },
+    {
+      "label": "Reference",
+      "pages": [
+        "roles",
+        "templates",
+        "glossary",
+        "assumptions"
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "id": "qa",
+      "name": "QA lead",
+      "audience": "QA leads and testers",
+      "description": "Plan cycles, own scripts and defects, and report status.",
+      "path": [
+        "strategy",
+        "cycles",
+        "criteria",
+        "tester",
+        "defects",
+        "metrics"
+      ]
+    },
+    {
+      "id": "tester",
+      "name": "Tester",
+      "audience": "QA leads and testers",
+      "description": "Execute scripts, capture evidence and log defects.",
+      "path": [
+        "tester",
+        "defects",
+        "templates",
+        "trace"
+      ]
+    },
+    {
+      "id": "biz",
+      "name": "Business stakeholder",
+      "audience": "Business users and UAT participants",
+      "description": "Run UAT scripts, comment, accept and sign off.",
+      "path": [
+        "cycles",
+        "uat",
+        "defects",
+        "templates",
+        "glossary"
+      ]
+    },
+    {
+      "id": "tech",
+      "name": "Technical owner",
+      "audience": "Technical and data teams",
+      "description": "Own conversions, interfaces, RICE objects, defect fixes and environments.",
+      "path": [
+        "rice",
+        "data",
+        "security",
+        "trace",
+        "sources",
+        "quality"
+      ]
+    },
+    {
+      "id": "pm",
+      "name": "Program manager",
+      "audience": "Program managers and executives",
+      "description": "Track status, risks and criteria across cycles.",
+      "path": [
+        "strategy",
+        "cycles",
+        "criteria",
+        "metrics",
+        "rag",
+        "assumptions"
+      ]
+    }
+  ],
+  "audiences": [
+    {
+      "name": "QA leads and testers",
+      "roleIds": [
+        "qa",
+        "tester"
+      ],
+      "blurb": "Day-to-day guidance for planning, executing and reporting tests.",
+      "links": [
+        "tester",
+        "defects",
+        "templates",
+        "criteria"
+      ]
+    },
+    {
+      "name": "Business users and UAT participants",
+      "roleIds": [
+        "biz"
+      ],
+      "blurb": "Plain-language instructions and acceptance steps.",
+      "links": [
+        "uat",
+        "cycles",
+        "glossary",
+        "templates"
+      ]
+    },
+    {
+      "name": "Program managers and executives",
+      "roleIds": [
+        "pm"
+      ],
+      "blurb": "Status definitions, KPIs and risk criteria.",
+      "links": [
+        "metrics",
+        "rag",
+        "criteria",
+        "assumptions"
+      ]
+    },
+    {
+      "name": "Technical and data teams",
+      "roleIds": [
+        "tech"
+      ],
+      "blurb": "Conversion, integration, RICE and traceability guidance.",
+      "links": [
+        "rice",
+        "data",
+        "trace",
+        "sources"
+      ]
+    }
+  ],
+  "strategy": {
+    "objectives": [
+      "Confirm that the Oracle Fusion Cloud ERP solution meets the agreed business requirements before go-live.",
+      "Find and fix defects early, in the cycle where they are cheapest to fix.",
+      "Give business users enough evidence to accept the solution and sign off.",
+      "Give program leadership a trustworthy, consistently defined view of testing status."
+    ],
+    "principles": [
+      "Results are reported separately for FUT/TUT, SIT and UAT.",
+      "Every result is backed by evidence that someone else can review.",
+      "Every failed or blocked script is linked to a defect or has a documented disposition.",
+      "Missing data is shown as missing. It is never counted as zero or as passed.",
+      "Entry and exit criteria are checked before a cycle starts and before it closes.",
+      "Thresholds and definitions come from the program configuration, not from individual judgment."
+    ],
+    "lifecycle": [
+      {
+        "name": "Plan",
+        "text": "Agree scope, cycles, criteria and roles."
+      },
+      {
+        "name": "Design",
+        "text": "Write scripts and trace them to user stories and RICE objects."
+      },
+      {
+        "name": "Prepare",
+        "text": "Ready the environment, data, security access and testers."
+      },
+      {
+        "name": "Execute",
+        "text": "Run scripts, capture evidence and record results."
+      },
+      {
+        "name": "Manage defects",
+        "text": "Log, triage, fix, re-test and close defects."
+      },
+      {
+        "name": "Report",
+        "text": "Calculate KPIs and apply RAG rules for each cycle."
+      },
+      {
+        "name": "Close and sign off",
+        "text": "Confirm exit criteria and record acceptance."
+      }
+    ],
+    "keyRule": "FUT/TUT, SIT, and UAT results are reported separately and never merged into one pass rate unless the definitions are comparable.",
+    "outOfScope": null
+  },
+  "cycles": [
+    {
+      "id": "fut_tut",
+      "short": "FUT/TUT",
+      "name": "Functional / Technical Unit Testing",
+      "enabled": true,
+      "participants": "QA team and technical owners",
+      "summary": "Sprint-based testing of individual functions and technical components with mock data.",
+      "facts": [
+        {
+          "label": "Structure",
+          "value": "Sprint-based"
+        },
+        {
+          "label": "Number of cycles and weeks",
+          "value": "No fixed number of cycles or weeks"
+        },
+        {
+          "label": "Test data",
+          "value": "Mock data"
+        },
+        {
+          "label": "Progression",
+          "value": "Executed before progression to the next cycle"
+        }
+      ]
+    },
+    {
+      "id": "sit",
+      "short": "SIT",
+      "name": "System Integration Testing",
+      "enabled": true,
+      "participants": "QA team, technical owners and select business stakeholders",
+      "summary": "End-to-end testing across Oracle modules and boundary applications.",
+      "facts": [
+        {
+          "label": "Structure",
+          "value": "One cycle"
+        },
+        {
+          "label": "Duration",
+          "value": "Three weeks"
+        },
+        {
+          "label": "Test data",
+          "value": "Converted production data at approximately 70% completeness"
+        },
+        {
+          "label": "Coverage",
+          "value": "End-to-end scenarios across Oracle modules and boundary applications"
+        },
+        {
+          "label": "Participants",
+          "value": "Select business stakeholders participate"
+        }
+      ]
+    },
+    {
+      "id": "uat",
+      "short": "UAT",
+      "name": "User Acceptance Testing",
+      "enabled": true,
+      "participants": "{{program}} business users, supported by the QA team",
+      "summary": "{{program}}-led acceptance testing by business users.",
+      "facts": [
+        {
+          "label": "Structure",
+          "value": "One cycle"
+        },
+        {
+          "label": "Duration",
+          "value": "Three weeks"
+        },
+        {
+          "label": "Test data",
+          "value": "Converted production data"
+        },
+        {
+          "label": "Lead",
+          "value": "{{program}}-led"
+        },
+        {
+          "label": "Participants",
+          "value": "Business users required"
+        },
+        {
+          "label": "Tracking",
+          "value": "Evidence, comments, acceptance, and sign-off tracked"
+        }
+      ]
+    },
+    {
+      "id": "regression",
+      "short": "Regression",
+      "name": "Regression testing",
+      "enabled": false,
+      "disabledLabel": "Not defined in current scope",
+      "participants": null,
+      "summary": "Optional cycle. Set \"enabled\" to true in the configuration and define its facts to activate it.",
+      "facts": []
+    }
+  ],
+  "criteria": {
+    "fut_tut": {
+      "entry": [
+        {
+          "id": "FT-E1",
+          "criterion": "Sprint scope and user stories are agreed",
+          "owner": "tech",
+          "evidence": "Sprint backlog extract",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        },
+        {
+          "id": "FT-E2",
+          "criterion": "Mock data is available for the sprint",
+          "owner": "tech",
+          "evidence": "Mock data load confirmation",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        },
+        {
+          "id": "FT-E3",
+          "criterion": "Test scripts are prepared and peer reviewed",
+          "owner": "qa",
+          "evidence": "Script review log",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        },
+        {
+          "id": "FT-E4",
+          "criterion": "Test environment is available and configured",
+          "owner": "tech",
+          "evidence": "Environment readiness note",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        },
+        {
+          "id": "FT-E5",
+          "criterion": "Tester access is provisioned",
+          "owner": "tech",
+          "evidence": "Access provisioning record",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        }
+      ],
+      "exit": [
+        {
+          "id": "FT-X1",
+          "criterion": "Planned scripts are executed for the sprint",
+          "owner": "qa",
+          "evidence": "Execution report",
+          "thresholdKey": "executed_pct_exit",
+          "status": "Not assessed"
+        },
+        {
+          "id": "FT-X2",
+          "criterion": "Open Critical defects are at or below the agreed limit",
+          "owner": "qa",
+          "evidence": "Defect report",
+          "thresholdKey": "open_critical_max",
+          "status": "Not assessed"
+        },
+        {
+          "id": "FT-X3",
+          "criterion": "Open High defects are at or below the agreed limit",
+          "owner": "qa",
+          "evidence": "Defect report",
+          "thresholdKey": "open_high_max",
+          "status": "Not assessed"
+        },
+        {
+          "id": "FT-X4",
+          "criterion": "Failed and blocked scripts have a defect or a documented disposition",
+          "owner": "tester",
+          "evidence": "Traceability report",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        },
+        {
+          "id": "FT-X5",
+          "criterion": "Results and evidence are recorded for every executed script",
+          "owner": "tester",
+          "evidence": "Execution records with evidence",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        },
+        {
+          "id": "FT-X6",
+          "criterion": "Technical owner confirms readiness to progress to the next cycle",
+          "owner": "tech",
+          "evidence": "Written confirmation",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        }
+      ]
+    },
+    "sit": {
+      "entry": [
+        {
+          "id": "SIT-E1",
+          "criterion": "FUT/TUT exit criteria are met",
+          "owner": "qa",
+          "evidence": "FUT/TUT exit checklist",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        },
+        {
+          "id": "SIT-E2",
+          "criterion": "Converted production data is loaded at the required completeness",
+          "owner": "tech",
+          "evidence": "Data completeness report",
+          "thresholdKey": "sit_data_completeness_min",
+          "status": "Not assessed"
+        },
+        {
+          "id": "SIT-E3",
+          "criterion": "End-to-end scenarios and scripts are approved",
+          "owner": "qa",
+          "evidence": "Scenario approval record",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        },
+        {
+          "id": "SIT-E4",
+          "criterion": "Connections to boundary applications are available",
+          "owner": "tech",
+          "evidence": "Connectivity test record",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        },
+        {
+          "id": "SIT-E5",
+          "criterion": "Participating business stakeholders are identified",
+          "owner": "pm",
+          "evidence": "Stakeholder list",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        },
+        {
+          "id": "SIT-E6",
+          "criterion": "Tester and stakeholder access is provisioned",
+          "owner": "tech",
+          "evidence": "Access provisioning record",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        }
+      ],
+      "exit": [
+        {
+          "id": "SIT-X1",
+          "criterion": "Planned end-to-end scenarios are executed",
+          "owner": "qa",
+          "evidence": "Execution report",
+          "thresholdKey": "executed_pct_exit",
+          "status": "Not assessed"
+        },
+        {
+          "id": "SIT-X2",
+          "criterion": "Open Critical defects are at or below the agreed limit",
+          "owner": "qa",
+          "evidence": "Defect report",
+          "thresholdKey": "open_critical_max",
+          "status": "Not assessed"
+        },
+        {
+          "id": "SIT-X3",
+          "criterion": "Open High defects are at or below the agreed limit",
+          "owner": "qa",
+          "evidence": "Defect report",
+          "thresholdKey": "open_high_max",
+          "status": "Not assessed"
+        },
+        {
+          "id": "SIT-X4",
+          "criterion": "Data conversion issues are triaged and assigned",
+          "owner": "tech",
+          "evidence": "Conversion issue log",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        },
+        {
+          "id": "SIT-X5",
+          "criterion": "Results and evidence are recorded for every executed script",
+          "owner": "tester",
+          "evidence": "Execution records with evidence",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        },
+        {
+          "id": "SIT-X6",
+          "criterion": "Program manager has reviewed the SIT summary",
+          "owner": "pm",
+          "evidence": "Review record",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        }
+      ]
+    },
+    "uat": {
+      "entry": [
+        {
+          "id": "UAT-E1",
+          "criterion": "SIT exit criteria are met",
+          "owner": "qa",
+          "evidence": "SIT exit checklist",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        },
+        {
+          "id": "UAT-E2",
+          "criterion": "Converted production data is loaded and reconciled",
+          "owner": "tech",
+          "evidence": "Reconciliation report",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        },
+        {
+          "id": "UAT-E3",
+          "criterion": "UAT scripts are approved by business stakeholders",
+          "owner": "biz",
+          "evidence": "Approval record",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        },
+        {
+          "id": "UAT-E4",
+          "criterion": "Business users are identified, briefed and provisioned",
+          "owner": "pm",
+          "evidence": "UAT participant list",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        },
+        {
+          "id": "UAT-E5",
+          "criterion": "UAT environment and access are confirmed",
+          "owner": "tech",
+          "evidence": "Environment and access confirmation",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        }
+      ],
+      "exit": [
+        {
+          "id": "UAT-X1",
+          "criterion": "Planned UAT scripts are executed with evidence and comments",
+          "owner": "biz",
+          "evidence": "Execution records",
+          "thresholdKey": "executed_pct_exit",
+          "status": "Not assessed"
+        },
+        {
+          "id": "UAT-X2",
+          "criterion": "Open Critical defects are at or below the agreed limit",
+          "owner": "qa",
+          "evidence": "Defect report",
+          "thresholdKey": "open_critical_max",
+          "status": "Not assessed"
+        },
+        {
+          "id": "UAT-X3",
+          "criterion": "Open High defects are at or below the agreed limit",
+          "owner": "qa",
+          "evidence": "Defect report",
+          "thresholdKey": "open_high_max",
+          "status": "Not assessed"
+        },
+        {
+          "id": "UAT-X4",
+          "criterion": "Acceptance is recorded for each script",
+          "owner": "biz",
+          "evidence": "Acceptance records",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        },
+        {
+          "id": "UAT-X5",
+          "criterion": "Sign-off is obtained from authorized business approvers",
+          "owner": "biz",
+          "evidence": "Signed UAT sign-off form",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        },
+        {
+          "id": "UAT-X6",
+          "criterion": "Outstanding items have an agreed disposition",
+          "owner": "pm",
+          "evidence": "Disposition log",
+          "thresholdKey": null,
+          "status": "Not assessed"
+        }
+      ]
+    },
+    "regression": {
+      "entry": [],
+      "exit": []
+    }
+  },
+  "thresholds": {
+    "criteria": {
+      "executed_pct_exit": {
+        "label": "Minimum executed % at exit",
+        "value": null,
+        "unit": "%"
+      },
+      "open_critical_max": {
+        "label": "Maximum open Critical defects",
+        "value": null,
+        "unit": "defects"
+      },
+      "open_high_max": {
+        "label": "Maximum open High defects",
+        "value": null,
+        "unit": "defects"
+      },
+      "sit_data_completeness_min": {
+        "label": "Minimum data completeness at SIT entry",
+        "value": null,
+        "unit": "%",
+        "note": "The scope describes SIT data as approximately 70% complete. Confirm the exact entry threshold."
+      }
+    },
+    "rag": {
+      "execution_pct": {
+        "label": "Execution %",
+        "direction": "higherIsBetter",
+        "green": 90,
+        "amber": 75,
+        "sample": true
+      },
+      "pass_rate": {
+        "label": "Pass rate",
+        "direction": "higherIsBetter",
+        "green": 95,
+        "amber": 85,
+        "sample": true
+      },
+      "fail_rate": {
+        "label": "Fail rate",
+        "direction": "lowerIsBetter",
+        "green": null,
+        "amber": null
+      },
+      "block_rate": {
+        "label": "Block rate",
+        "direction": "lowerIsBetter",
+        "green": null,
+        "amber": null
+      },
+      "first_pass_yield": {
+        "label": "First-Pass Yield",
+        "direction": "higherIsBetter",
+        "green": null,
+        "amber": null
+      },
+      "retest_pass_rate": {
+        "label": "Re-test Pass Rate",
+        "direction": "higherIsBetter",
+        "green": null,
+        "amber": null
+      },
+      "coverage_pct": {
+        "label": "Coverage %",
+        "direction": "higherIsBetter",
+        "green": null,
+        "amber": null
+      },
+      "defect_density": {
+        "label": "Defect Density (per 100 executed scripts)",
+        "direction": "lowerIsBetter",
+        "green": null,
+        "amber": null
+      },
+      "defect_aging": {
+        "label": "Average defect age (days)",
+        "direction": "lowerIsBetter",
+        "green": 5,
+        "amber": 10,
+        "sample": true
+      },
+      "defect_leakage": {
+        "label": "Defect Leakage",
+        "direction": "lowerIsBetter",
+        "green": null,
+        "amber": null
+      },
+      "data_completeness": {
+        "label": "Data Completeness %",
+        "direction": "higherIsBetter",
+        "green": null,
+        "amber": null
+      }
+    }
+  },
+  "modules": [
+    {
+      "id": "rm",
+      "name": "Revenue Management",
+      "type": "Oracle module",
+      "enabled": true
+    },
+    {
+      "id": "ar",
+      "name": "Accounts Receivable",
+      "type": "Oracle module",
+      "enabled": true
+    },
+    {
+      "id": "cm",
+      "name": "Cash Management",
+      "type": "Oracle module",
+      "enabled": true
+    },
+    {
+      "id": "col",
+      "name": "Collections",
+      "type": "Oracle module",
+      "enabled": true
+    },
+    {
+      "id": "om",
+      "name": "Order Management",
+      "type": "Oracle module",
+      "enabled": true
+    },
+    {
+      "id": "sub",
+      "name": "Subscription Management",
+      "type": "Oracle module",
+      "enabled": true
+    },
+    {
+      "id": "pm",
+      "name": "Product Management",
+      "type": "Oracle module",
+      "enabled": true
+    },
+    {
+      "id": "ftax",
+      "name": "Fusion Tax",
+      "type": "Oracle module",
+      "enabled": true
+    },
+    {
+      "id": "vertex",
+      "name": "Vertex integration (US B2B sales/use tax)",
+      "type": "Integration / boundary application",
+      "enabled": true
+    },
+    {
+      "id": "eutax",
+      "name": "Cloud Tax for European VAT",
+      "type": "Oracle module",
+      "enabled": true
+    }
+  ],
+  "processes": [
+    {
+      "id": "P01",
+      "name": "Maintain product and pricing setup",
+      "description": "Create and maintain products, bundles and price lists.",
+      "modules": {
+        "pm": "primary",
+        "om": "supporting",
+        "sub": "supporting"
+      }
+    },
+    {
+      "id": "P02",
+      "name": "Capture and import orders",
+      "description": "Receive orders from channels and validate them in Order Management.",
+      "modules": {
+        "om": "primary",
+        "pm": "supporting",
+        "sub": "supporting"
+      }
+    },
+    {
+      "id": "P03",
+      "name": "Manage the subscription lifecycle",
+      "description": "Start, amend, renew and cancel subscriptions.",
+      "modules": {
+        "sub": "primary",
+        "om": "supporting",
+        "rm": "supporting"
+      }
+    },
+    {
+      "id": "P04",
+      "name": "Calculate US sales and use tax",
+      "description": "Determine tax on US B2B transactions through the Vertex integration.",
+      "modules": {
+        "vertex": "primary",
+        "ftax": "primary",
+        "ar": "supporting",
+        "om": "supporting"
+      }
+    },
+    {
+      "id": "P05",
+      "name": "Calculate European VAT",
+      "description": "Determine VAT for the configured European tax country.",
+      "modules": {
+        "eutax": "primary",
+        "ftax": "supporting",
+        "ar": "supporting"
+      }
+    },
+    {
+      "id": "P06",
+      "name": "Bill and invoice customers",
+      "description": "Generate, review and distribute invoices.",
+      "modules": {
+        "ar": "primary",
+        "sub": "supporting",
+        "om": "supporting"
+      }
+    },
+    {
+      "id": "P07",
+      "name": "Recognize revenue",
+      "description": "Create revenue contracts, allocate and recognize revenue.",
+      "modules": {
+        "rm": "primary",
+        "ar": "supporting",
+        "sub": "supporting"
+      }
+    },
+    {
+      "id": "P08",
+      "name": "Apply receipts and reconcile cash",
+      "description": "Apply customer receipts and reconcile bank activity.",
+      "modules": {
+        "cm": "primary",
+        "ar": "primary"
+      }
+    },
+    {
+      "id": "P09",
+      "name": "Manage collections and dunning",
+      "description": "Follow up on overdue balances.",
+      "modules": {
+        "col": "primary",
+        "ar": "supporting"
+      }
+    },
+    {
+      "id": "P10",
+      "name": "Convert and reconcile data",
+      "description": "Load converted data and reconcile it to source.",
+      "modules": {
+        "ar": "supporting",
+        "pm": "supporting",
+        "sub": "supporting",
+        "rm": "supporting"
+      }
+    }
+  ],
+  "rice": {
+    "types": [
+      "Report",
+      "Interface",
+      "Conversion",
+      "Extension"
+    ],
+    "complexities": [
+      "Simple",
+      "Medium",
+      "Complex",
+      "Very Complex"
+    ],
+    "expectedDistribution": {
+      "Simple": 3,
+      "Medium": 6,
+      "Complex": 4,
+      "Very Complex": 7
+    },
+    "extensionNote": "Extensions are not modifications to Oracle-provided base code.",
+    "objects": [
+      {
+        "id": "RICE-R01",
+        "name": "AR aging summary report",
+        "type": "Report",
+        "complexity": "Simple",
+        "module": "ar"
+      },
+      {
+        "id": "RICE-R02",
+        "name": "Revenue waterfall report",
+        "type": "Report",
+        "complexity": "Medium",
+        "module": "rm"
+      },
+      {
+        "id": "RICE-R03",
+        "name": "Subscription renewal forecast report",
+        "type": "Report",
+        "complexity": "Medium",
+        "module": "sub"
+      },
+      {
+        "id": "RICE-R04",
+        "name": "US tax reconciliation report",
+        "type": "Report",
+        "complexity": "Complex",
+        "module": "ftax"
+      },
+      {
+        "id": "RICE-I01",
+        "name": "Order import interface",
+        "type": "Interface",
+        "complexity": "Medium",
+        "module": "om"
+      },
+      {
+        "id": "RICE-I02",
+        "name": "Vertex tax calculation interface",
+        "type": "Interface",
+        "complexity": "Very Complex",
+        "module": "vertex"
+      },
+      {
+        "id": "RICE-I03",
+        "name": "Product catalog sync interface",
+        "type": "Interface",
+        "complexity": "Complex",
+        "module": "pm"
+      },
+      {
+        "id": "RICE-I04",
+        "name": "Billing to revenue interface",
+        "type": "Interface",
+        "complexity": "Very Complex",
+        "module": "rm"
+      },
+      {
+        "id": "RICE-I05",
+        "name": "Bank statement interface",
+        "type": "Interface",
+        "complexity": "Medium",
+        "module": "cm"
+      },
+      {
+        "id": "RICE-I06",
+        "name": "Collections notification interface",
+        "type": "Interface",
+        "complexity": "Simple",
+        "module": "col"
+      },
+      {
+        "id": "RICE-C01",
+        "name": "Active subscriptions conversion",
+        "type": "Conversion",
+        "complexity": "Very Complex",
+        "module": "sub"
+      },
+      {
+        "id": "RICE-C02",
+        "name": "Product master conversion",
+        "type": "Conversion",
+        "complexity": "Complex",
+        "module": "pm"
+      },
+      {
+        "id": "RICE-C03",
+        "name": "Customer master conversion",
+        "type": "Conversion",
+        "complexity": "Medium",
+        "module": "ar"
+      },
+      {
+        "id": "RICE-C04",
+        "name": "Open revenue contracts conversion",
+        "type": "Conversion",
+        "complexity": "Very Complex",
+        "module": "rm"
+      },
+      {
+        "id": "RICE-C05",
+        "name": "Open receipts conversion",
+        "type": "Conversion",
+        "complexity": "Simple",
+        "module": "cm"
+      },
+      {
+        "id": "RICE-E01",
+        "name": "Subscription billing rule extension",
+        "type": "Extension",
+        "complexity": "Very Complex",
+        "module": "sub"
+      },
+      {
+        "id": "RICE-E02",
+        "name": "Order hold approval extension",
+        "type": "Extension",
+        "complexity": "Medium",
+        "module": "om"
+      },
+      {
+        "id": "RICE-E03",
+        "name": "Collections strategy extension",
+        "type": "Extension",
+        "complexity": "Complex",
+        "module": "col"
+      },
+      {
+        "id": "RICE-E04",
+        "name": "Revenue allocation extension",
+        "type": "Extension",
+        "complexity": "Very Complex",
+        "module": "rm"
+      },
+      {
+        "id": "RICE-E05",
+        "name": "Tax determination extension (European VAT)",
+        "type": "Extension",
+        "complexity": "Very Complex",
+        "module": "eutax"
+      }
+    ]
+  },
+  "conversion": {
+    "steps": [
+      {
+        "id": "extraction",
+        "name": "Extraction",
+        "text": "Source data is extracted from the legacy system with a record count."
+      },
+      {
+        "id": "cleansing",
+        "name": "Cleansing",
+        "text": "Duplicates, gaps and invalid values are corrected or excluded with approval."
+      },
+      {
+        "id": "transformation",
+        "name": "Transformation",
+        "text": "Data is mapped and reshaped to the Oracle Fusion load format."
+      },
+      {
+        "id": "validation",
+        "name": "Validation",
+        "text": "Loaded data is checked against the rules and expected record counts."
+      },
+      {
+        "id": "reconciliation",
+        "name": "Reconciliation",
+        "text": "Loaded data is reconciled back to source totals and balances."
+      },
+      {
+        "id": "signoff",
+        "name": "Sign-off",
+        "text": "The data owner accepts the converted data."
+      }
+    ],
+    "statusValues": [
+      "Not started",
+      "In progress",
+      "Complete"
+    ],
+    "evidenceRule": "No step counts as complete without source evidence.",
+    "objects": [
+      {
+        "id": "cv01",
+        "name": "Customer Master",
+        "expectedRecords": 1200,
+        "validatedRecords": 840,
+        "steps": {
+          "extraction": {
+            "status": "Complete",
+            "evidence": "EV-CUS-001 (sample)"
+          },
+          "cleansing": {
+            "status": "Complete",
+            "evidence": "EV-CUS-002 (sample)"
+          },
+          "transformation": {
+            "status": "Complete",
+            "evidence": "EV-CUS-003 (sample)"
+          },
+          "validation": {
+            "status": "In progress",
+            "evidence": null
+          },
+          "reconciliation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "signoff": {
+            "status": "Not started",
+            "evidence": null
+          }
+        }
+      },
+      {
+        "id": "cv02",
+        "name": "Product Master",
+        "expectedRecords": 350,
+        "validatedRecords": 245,
+        "steps": {
+          "extraction": {
+            "status": "Complete",
+            "evidence": "EV-PRD-001 (sample)"
+          },
+          "cleansing": {
+            "status": "Complete",
+            "evidence": "EV-PRD-002 (sample)"
+          },
+          "transformation": {
+            "status": "In progress",
+            "evidence": null
+          },
+          "validation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "reconciliation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "signoff": {
+            "status": "Not started",
+            "evidence": null
+          }
+        }
+      },
+      {
+        "id": "cv03",
+        "name": "Active Subscriptions",
+        "expectedRecords": 800,
+        "validatedRecords": null,
+        "steps": {
+          "extraction": {
+            "status": "Complete",
+            "evidence": null
+          },
+          "cleansing": {
+            "status": "In progress",
+            "evidence": null
+          },
+          "transformation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "validation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "reconciliation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "signoff": {
+            "status": "Not started",
+            "evidence": null
+          }
+        }
+      },
+      {
+        "id": "cv04",
+        "name": "Open Revenue Contracts",
+        "expectedRecords": null,
+        "validatedRecords": null,
+        "steps": {
+          "extraction": {
+            "status": "In progress",
+            "evidence": null
+          },
+          "cleansing": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "transformation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "validation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "reconciliation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "signoff": {
+            "status": "Not started",
+            "evidence": null
+          }
+        }
+      },
+      {
+        "id": "cv05",
+        "name": "Suppliers",
+        "expectedRecords": null,
+        "validatedRecords": null,
+        "steps": {
+          "extraction": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "cleansing": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "transformation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "validation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "reconciliation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "signoff": {
+            "status": "Not started",
+            "evidence": null
+          }
+        }
+      },
+      {
+        "id": "cv06",
+        "name": "Item Master",
+        "expectedRecords": null,
+        "validatedRecords": null,
+        "steps": {
+          "extraction": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "cleansing": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "transformation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "validation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "reconciliation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "signoff": {
+            "status": "Not started",
+            "evidence": null
+          }
+        }
+      },
+      {
+        "id": "cv07",
+        "name": "Fixed Assets",
+        "expectedRecords": null,
+        "validatedRecords": null,
+        "steps": {
+          "extraction": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "cleansing": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "transformation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "validation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "reconciliation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "signoff": {
+            "status": "Not started",
+            "evidence": null
+          }
+        }
+      },
+      {
+        "id": "cv08",
+        "name": "Open Transactions",
+        "expectedRecords": null,
+        "validatedRecords": null,
+        "steps": {
+          "extraction": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "cleansing": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "transformation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "validation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "reconciliation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "signoff": {
+            "status": "Not started",
+            "evidence": null
+          }
+        }
+      },
+      {
+        "id": "cv09",
+        "name": "BOM (Bill of Materials)",
+        "expectedRecords": null,
+        "validatedRecords": null,
+        "steps": {
+          "extraction": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "cleansing": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "transformation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "validation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "reconciliation": {
+            "status": "Not started",
+            "evidence": null
+          },
+          "signoff": {
+            "status": "Not started",
+            "evidence": null
+          }
+        }
+      }
+    ]
+  },
+  "security": {
+    "intro": "Security and access are readiness dependencies for testing. They are tracked as dependencies, not as test results, unless an explicit test record exists.",
+    "topics": [
+      {
+        "id": "sec1",
+        "topic": "User access design",
+        "text": "Defines which user groups need which access in each environment.",
+        "owner": "tech",
+        "status": "Not assessed"
+      },
+      {
+        "id": "sec2",
+        "topic": "Segregation of duties (SoD)",
+        "text": "Confirms that role combinations do not create conflicting duties.",
+        "owner": "tech",
+        "status": "Not assessed"
+      },
+      {
+        "id": "sec3",
+        "topic": "Roles",
+        "text": "Job and duty roles are built, assigned and reviewed against the access design.",
+        "owner": "tech",
+        "status": "Not assessed"
+      },
+      {
+        "id": "sec4",
+        "topic": "Data access sets",
+        "text": "Users can reach only the data they are meant to see and change.",
+        "owner": "tech",
+        "status": "Not assessed"
+      },
+      {
+        "id": "sec5",
+        "topic": "Provisioning",
+        "text": "Testers and business users receive their access before each cycle starts.",
+        "owner": "tech",
+        "status": "Not assessed"
+      },
+      {
+        "id": "sec6",
+        "topic": "Pod refresh",
+        "text": "After an environment refresh, confirm that users, roles and access are restored or re-applied. Confirm the exact steps with the project team.",
+        "owner": "tech",
+        "status": "Not assessed"
+      },
+      {
+        "id": "sec7",
+        "topic": "Mock and production cutover access",
+        "text": "Access needed during mock cutovers and the production cutover is defined and approved.",
+        "owner": "pm",
+        "status": "Not assessed"
+      }
+    ],
+    "testRecords": []
+  },
+  "defects": {
+    "statuses": [
+      {
+        "id": "Open",
+        "text": "Logged and waiting for triage or assignment."
+      },
+      {
+        "id": "In Progress",
+        "text": "Assigned and being analyzed or fixed."
+      },
+      {
+        "id": "Resolved",
+        "text": "Fix delivered and waiting for re-test."
+      },
+      {
+        "id": "Closed",
+        "text": "Re-test passed and confirmed."
+      },
+      {
+        "id": "Reopened",
+        "text": "Re-test failed or the issue recurred. Returns to the fix queue."
+      }
+    ],
+    "transitions": [
+      [
+        "Open",
+        "In Progress"
+      ],
+      [
+        "In Progress",
+        "Resolved"
+      ],
+      [
+        "Resolved",
+        "Closed"
+      ],
+      [
+        "Resolved",
+        "Reopened"
+      ],
+      [
+        "Reopened",
+        "In Progress"
+      ]
+    ],
+    "openStatuses": [
+      "Open",
+      "In Progress",
+      "Reopened"
+    ],
+    "severities": [
+      {
+        "id": "Critical",
+        "text": "Stops testing or a business-critical process with no workaround, or puts financial accuracy or compliance at risk.",
+        "example": "Invoices cannot be generated, or revenue posts to the wrong period."
+      },
+      {
+        "id": "High",
+        "text": "A major function fails or gives wrong results. A workaround exists but is difficult or risky.",
+        "example": "Tax is calculated incorrectly for one customer group."
+      },
+      {
+        "id": "Medium",
+        "text": "A function partly fails or gives a wrong result. An acceptable workaround exists.",
+        "example": "A report total is correct but a subtotal is missing."
+      },
+      {
+        "id": "Low",
+        "text": "A minor issue with no effect on results.",
+        "example": "A field label is misspelled."
+      }
+    ],
+    "priorities": [
+      {
+        "id": "P1",
+        "text": "Fix immediately. The defect blocks the cycle or a critical process."
+      },
+      {
+        "id": "P2",
+        "text": "Fix within the current cycle window."
+      },
+      {
+        "id": "P3",
+        "text": "Fix before the cycle exits, or agree a deferral."
+      },
+      {
+        "id": "P4",
+        "text": "Fix when capacity allows. May be deferred with approval."
+      }
+    ],
+    "matrix": {
+      "Critical": [
+        "Typical",
+        "Possible",
+        "Needs justification",
+        "Needs justification"
+      ],
+      "High": [
+        "Possible",
+        "Typical",
+        "Possible",
+        "Needs justification"
+      ],
+      "Medium": [
+        "Needs justification",
+        "Possible",
+        "Typical",
+        "Possible"
+      ],
+      "Low": [
+        "Needs justification",
+        "Needs justification",
+        "Possible",
+        "Typical"
+      ]
+    },
+    "requiredFields": [
+      {
+        "field": "Summary",
+        "why": "Lets anyone find and recognize the defect in a list."
+      },
+      {
+        "field": "Steps to reproduce",
+        "why": "Lets the fixer see the same problem."
+      },
+      {
+        "field": "Expected and actual result",
+        "why": "Shows what is wrong and what correct looks like."
+      },
+      {
+        "field": "Severity and priority",
+        "why": "Drives the order of work and the escalation path."
+      },
+      {
+        "field": "Cycle found",
+        "why": "Needed for Defect Density and Defect Leakage by cycle."
+      },
+      {
+        "field": "Module, process and RICE reference",
+        "why": "Needed for coverage and for routing to the right owner."
+      },
+      {
+        "field": "Linked story and test script",
+        "why": "Keeps traceability complete."
+      },
+      {
+        "field": "Environment and test data used",
+        "why": "Separates data problems from configuration problems."
+      },
+      {
+        "field": "Evidence attached",
+        "why": "Screenshots or logs prove the result without a conversation."
+      },
+      {
+        "field": "Reporter and date found",
+        "why": "Needed for aging and for follow-up questions."
+      }
+    ],
+    "escalation": [
+      {
+        "level": "Level 1",
+        "from": "Tester",
+        "to": "QA lead",
+        "trigger": null
+      },
+      {
+        "level": "Level 2",
+        "from": "QA lead",
+        "to": "Technical owner",
+        "trigger": null
+      },
+      {
+        "level": "Level 3",
+        "from": "Technical owner",
+        "to": "Program manager",
+        "trigger": null
+      },
+      {
+        "level": "Level 4",
+        "from": "Program manager",
+        "to": "Steering committee",
+        "trigger": null
+      }
+    ],
+    "aging": [
+      {
+        "label": "0 to 2 days",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "label": "3 to 5 days",
+        "min": 3,
+        "max": 5
+      },
+      {
+        "label": "6 to 10 days",
+        "min": 6,
+        "max": 10
+      },
+      {
+        "label": "11 days or more",
+        "min": 11,
+        "max": null
+      }
+    ],
+    "slas": [
+      {
+        "severity": "Critical",
+        "response": null,
+        "resolution": null
+      },
+      {
+        "severity": "High",
+        "response": null,
+        "resolution": null
+      },
+      {
+        "severity": "Medium",
+        "response": null,
+        "resolution": null
+      },
+      {
+        "severity": "Low",
+        "response": null,
+        "resolution": null
+      }
+    ],
+    "goodDefect": [
+      "Write a summary that names the object and the problem, for example: \"Invoice total excludes tax for order type X\".",
+      "List the exact steps, the data used and the user role you used.",
+      "State the expected result and the actual result separately.",
+      "Attach a screenshot or log that shows the problem.",
+      "Link the defect to the failed script and the user story.",
+      "Set severity from the business impact, not from how hard the fix looks.",
+      "Log one problem per defect."
+    ]
+  },
+  "traceability": {
+    "nodes": [
+      {
+        "id": "story",
+        "label": "User story",
+        "system": "Jira",
+        "text": "The requirement or change that the test is meant to prove.",
+        "fields": [
+          "Story key",
+          "Module",
+          "Process",
+          "RICE ID"
+        ]
+      },
+      {
+        "id": "script",
+        "label": "Test script",
+        "system": "ALM",
+        "alm": true,
+        "text": "The scripted steps and expected results that cover a story.",
+        "fields": [
+          "Test ID",
+          "Story key",
+          "Cycle"
+        ]
+      },
+      {
+        "id": "execution",
+        "label": "Execution",
+        "system": "ALM",
+        "alm": true,
+        "text": "One run of a script by a named tester in a cycle.",
+        "fields": [
+          "Test ID",
+          "Cycle",
+          "Attempt number",
+          "Executed on"
+        ]
+      },
+      {
+        "id": "result",
+        "label": "Result",
+        "system": "ALM",
+        "alm": true,
+        "text": "Passed, Failed, Blocked, Not Run, In Progress or Not Applicable.",
+        "fields": [
+          "Result status",
+          "Evidence"
+        ]
+      },
+      {
+        "id": "defect",
+        "label": "Defect",
+        "system": "{{defectSource}}",
+        "text": "A logged problem linked to the failed or blocked script and to its story.",
+        "fields": [
+          "Defect ID",
+          "Test ID",
+          "Story key",
+          "Severity",
+          "Priority"
+        ]
+      }
+    ],
+    "gaps": [
+      {
+        "id": "g1",
+        "title": "Stories without scripts",
+        "from": "story",
+        "to": "script",
+        "text": "A story has no linked test script, so nothing proves it works.",
+        "fix": "Write or link a script, or mark the story out of scope with approval."
+      },
+      {
+        "id": "g2",
+        "title": "Failed tests without defects",
+        "from": "result",
+        "to": "defect",
+        "text": "A script failed but no defect explains why.",
+        "fix": "Log a defect and link it to the script, or record a documented disposition."
+      },
+      {
+        "id": "g3",
+        "title": "Defects without stories",
+        "from": "defect",
+        "to": "story",
+        "text": "A defect cannot be traced back to the requirement it affects.",
+        "fix": "Link the defect to the correct story, or log a new story for gaps in the requirements."
+      },
+      {
+        "id": "g4",
+        "title": "Missing process, module or RICE mapping",
+        "from": "script",
+        "to": "story",
+        "text": "Records without these fields cannot be grouped, filtered or routed to an owner.",
+        "fix": "Add the missing fields in the source system and re-load the data."
+      }
+    ]
+  },
+  "kpis": [
+    {
+      "id": "execution_pct",
+      "name": "Execution %",
+      "definition": "Share of planned, applicable scripts that have been executed to a result.",
+      "numerator": "Passed + Failed + Blocked",
+      "denominator": "Passed + Failed + Blocked + Not Run + In Progress",
+      "exclusions": "Not Applicable scripts are excluded from the denominator.",
+      "source": "Test execution records (Jira, Excel fallback, or ALM adapter required)",
+      "cycles": [
+        "fut_tut",
+        "sit",
+        "uat",
+        "regression"
+      ],
+      "inputs": [
+        {
+          "key": "passed",
+          "label": "Passed"
+        },
+        {
+          "key": "failed",
+          "label": "Failed"
+        },
+        {
+          "key": "blocked",
+          "label": "Blocked"
+        },
+        {
+          "key": "notRun",
+          "label": "Not Run"
+        },
+        {
+          "key": "inProgress",
+          "label": "In Progress"
+        },
+        {
+          "key": "notApplicable",
+          "label": "Not Applicable"
+        }
+      ],
+      "assumption": "A-04",
+      "outputs": [
+        {
+          "id": "execution_pct",
+          "label": "Execution %",
+          "num": [
+            "passed",
+            "failed",
+            "blocked"
+          ],
+          "den": [
+            "passed",
+            "failed",
+            "blocked",
+            "notRun",
+            "inProgress"
+          ],
+          "scale": 100,
+          "unit": "%",
+          "capped": true,
+          "denLabel": "Passed + Failed + Blocked + Not Run + In Progress",
+          "thresholdKey": "execution_pct"
+        }
+      ]
+    },
+    {
+      "id": "result_rates",
+      "name": "Pass / Fail / Block rate",
+      "definition": "Share of executed results that are Passed, Failed or Blocked. Reported separately for each cycle.",
+      "numerator": "Count of the result being measured",
+      "denominator": "Passed + Failed + Blocked",
+      "exclusions": "Not Run, In Progress and Not Applicable are excluded. Not Run and Not Applicable are never counted as Passed.",
+      "source": "Test execution records (Jira, Excel fallback, or ALM adapter required)",
+      "cycles": [
+        "fut_tut",
+        "sit",
+        "uat",
+        "regression"
+      ],
+      "inputs": [
+        {
+          "key": "passed",
+          "label": "Passed"
+        },
+        {
+          "key": "failed",
+          "label": "Failed"
+        },
+        {
+          "key": "blocked",
+          "label": "Blocked"
+        },
+        {
+          "key": "notRun",
+          "label": "Not Run"
+        },
+        {
+          "key": "inProgress",
+          "label": "In Progress"
+        },
+        {
+          "key": "notApplicable",
+          "label": "Not Applicable"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "pass_rate",
+          "label": "Pass rate",
+          "num": [
+            "passed"
+          ],
+          "den": [
+            "passed",
+            "failed",
+            "blocked"
+          ],
+          "scale": 100,
+          "unit": "%",
+          "capped": true,
+          "denLabel": "Passed + Failed + Blocked",
+          "thresholdKey": "pass_rate"
+        },
+        {
+          "id": "fail_rate",
+          "label": "Fail rate",
+          "num": [
+            "failed"
+          ],
+          "den": [
+            "passed",
+            "failed",
+            "blocked"
+          ],
+          "scale": 100,
+          "unit": "%",
+          "capped": true,
+          "denLabel": "Passed + Failed + Blocked",
+          "thresholdKey": "fail_rate"
+        },
+        {
+          "id": "block_rate",
+          "label": "Block rate",
+          "num": [
+            "blocked"
+          ],
+          "den": [
+            "passed",
+            "failed",
+            "blocked"
+          ],
+          "scale": 100,
+          "unit": "%",
+          "capped": true,
+          "denLabel": "Passed + Failed + Blocked",
+          "thresholdKey": "block_rate"
+        }
+      ]
+    },
+    {
+      "id": "first_pass_yield",
+      "name": "First-Pass Yield",
+      "definition": "Share of executed scripts that passed on the first attempt.",
+      "numerator": "Scripts Passed on attempt 1",
+      "denominator": "Scripts executed (Passed + Failed + Blocked)",
+      "exclusions": "Scripts not yet executed and Not Applicable scripts.",
+      "source": "Execution records that include an attempt number",
+      "cycles": [
+        "fut_tut",
+        "sit",
+        "uat",
+        "regression"
+      ],
+      "assumption": "A-14",
+      "inputs": [
+        {
+          "key": "firstAttemptPassed",
+          "label": "Scripts passed on attempt 1"
+        },
+        {
+          "key": "executed",
+          "label": "Scripts executed (Passed + Failed + Blocked)"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "first_pass_yield",
+          "label": "First-Pass Yield",
+          "num": [
+            "firstAttemptPassed"
+          ],
+          "den": [
+            "executed"
+          ],
+          "scale": 100,
+          "unit": "%",
+          "capped": true,
+          "denLabel": "Scripts executed (Passed + Failed + Blocked)",
+          "thresholdKey": "first_pass_yield"
+        }
+      ]
+    },
+    {
+      "id": "retest_pass_rate",
+      "name": "Re-test Pass Rate",
+      "definition": "Share of re-executed scripts that passed.",
+      "numerator": "Re-executed scripts Passed",
+      "denominator": "Re-executed scripts with a result (attempt 2 or later: Passed + Failed + Blocked)",
+      "exclusions": "First-attempt executions; scripts not yet re-executed.",
+      "source": "Execution records that include an attempt number",
+      "cycles": [
+        "fut_tut",
+        "sit",
+        "uat",
+        "regression"
+      ],
+      "assumption": "A-14",
+      "inputs": [
+        {
+          "key": "retestPassed",
+          "label": "Re-executed scripts passed"
+        },
+        {
+          "key": "retestExecuted",
+          "label": "Re-executed scripts with a result"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "retest_pass_rate",
+          "label": "Re-test Pass Rate",
+          "num": [
+            "retestPassed"
+          ],
+          "den": [
+            "retestExecuted"
+          ],
+          "scale": 100,
+          "unit": "%",
+          "capped": true,
+          "denLabel": "Re-executed scripts with a result",
+          "thresholdKey": "retest_pass_rate"
+        }
+      ]
+    },
+    {
+      "id": "coverage_pct",
+      "name": "Coverage %",
+      "definition": "Share of in-scope user stories that have at least one linked test script in the cycle.",
+      "numerator": "Stories with at least one linked script in the cycle",
+      "denominator": "In-scope stories",
+      "exclusions": "Stories formally marked out of scope.",
+      "source": "Jira stories and script-to-story links",
+      "cycles": [
+        "fut_tut",
+        "sit",
+        "uat",
+        "regression"
+      ],
+      "assumption": "A-20",
+      "inputs": [
+        {
+          "key": "storiesWithScript",
+          "label": "Stories with at least one linked script"
+        },
+        {
+          "key": "storiesInScope",
+          "label": "In-scope stories"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "coverage_pct",
+          "label": "Coverage %",
+          "num": [
+            "storiesWithScript"
+          ],
+          "den": [
+            "storiesInScope"
+          ],
+          "scale": 100,
+          "unit": "%",
+          "capped": true,
+          "denLabel": "In-scope stories",
+          "thresholdKey": "coverage_pct"
+        }
+      ]
+    },
+    {
+      "id": "defect_density",
+      "name": "Defect Density",
+      "definition": "Defects found relative to the volume of executed testing, expressed per 100 executed scripts.",
+      "numerator": "Defects logged in the cycle",
+      "denominator": "Scripts executed (Passed + Failed + Blocked)",
+      "exclusions": "Defects rejected as invalid; scripts not yet executed.",
+      "source": "Defect records and execution records",
+      "cycles": [
+        "fut_tut",
+        "sit",
+        "uat",
+        "regression"
+      ],
+      "inputs": [
+        {
+          "key": "defects",
+          "label": "Defects logged in the cycle"
+        },
+        {
+          "key": "executed",
+          "label": "Scripts executed (Passed + Failed + Blocked)"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "defect_density",
+          "label": "Defect Density",
+          "num": [
+            "defects"
+          ],
+          "den": [
+            "executed"
+          ],
+          "scale": 100,
+          "unit": "per100",
+          "capped": false,
+          "denLabel": "Scripts executed (Passed + Failed + Blocked)",
+          "thresholdKey": "defect_density"
+        }
+      ]
+    },
+    {
+      "id": "defect_aging",
+      "name": "Defect Aging",
+      "definition": "Average number of days that open defects have been open. Bucket counts are shown on the Defect Management page.",
+      "numerator": "Sum of days open across all open defects",
+      "denominator": "Count of open defects",
+      "exclusions": "Resolved and Closed defects.",
+      "source": "Defect records with created date",
+      "cycles": [
+        "fut_tut",
+        "sit",
+        "uat",
+        "regression"
+      ],
+      "assumption": "A-06",
+      "inputs": [
+        {
+          "key": "sumAgeDays",
+          "label": "Sum of days open across open defects"
+        },
+        {
+          "key": "openDefects",
+          "label": "Count of open defects"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "defect_aging",
+          "label": "Average defect age",
+          "num": [
+            "sumAgeDays"
+          ],
+          "den": [
+            "openDefects"
+          ],
+          "scale": 1,
+          "unit": "days",
+          "capped": false,
+          "denLabel": "Count of open defects",
+          "thresholdKey": "defect_aging"
+        }
+      ]
+    },
+    {
+      "id": "defect_leakage",
+      "name": "Defect Leakage",
+      "definition": "Share of defects found in a cycle that should have been caught in an earlier cycle.",
+      "numerator": "Defects found in the cycle and attributed to an earlier cycle",
+      "denominator": "All defects found in the cycle",
+      "exclusions": "Not applicable to FUT/TUT because no earlier cycle exists.",
+      "source": "Defect records with an 'escaped from' attribution",
+      "cycles": [
+        "sit",
+        "uat",
+        "regression"
+      ],
+      "assumption": "A-05",
+      "inputs": [
+        {
+          "key": "leaked",
+          "label": "Defects attributed to an earlier cycle"
+        },
+        {
+          "key": "foundInCycle",
+          "label": "All defects found in the cycle"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "defect_leakage",
+          "label": "Defect Leakage",
+          "num": [
+            "leaked"
+          ],
+          "den": [
+            "foundInCycle"
+          ],
+          "scale": 100,
+          "unit": "%",
+          "capped": true,
+          "denLabel": "All defects found in the cycle",
+          "thresholdKey": "defect_leakage"
+        }
+      ]
+    },
+    {
+      "id": "data_completeness",
+      "name": "Data Completeness %",
+      "definition": "Share of expected source records that are converted, validated and supported by evidence.",
+      "numerator": "Validated records with evidence",
+      "denominator": "Expected source records",
+      "exclusions": "Records formally excluded with approval.",
+      "source": "Data conversion status and record counts",
+      "cycles": [
+        "sit",
+        "uat",
+        "regression"
+      ],
+      "inputs": [
+        {
+          "key": "validatedRecords",
+          "label": "Validated records with evidence"
+        },
+        {
+          "key": "expectedRecords",
+          "label": "Expected source records"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "data_completeness",
+          "label": "Data Completeness %",
+          "num": [
+            "validatedRecords"
+          ],
+          "den": [
+            "expectedRecords"
+          ],
+          "scale": 100,
+          "unit": "%",
+          "capped": true,
+          "denLabel": "Expected source records",
+          "thresholdKey": "data_completeness"
+        }
+      ]
+    }
+  ],
+  "rag": {
+    "intro": "Each metric is rated Green, Amber or Red by comparing its value with thresholds from the program configuration. The logic never contains a number of its own.",
+    "definitions": [
+      {
+        "id": "Green",
+        "text": "The value is on the target side of the Green threshold. No action is needed beyond normal monitoring."
+      },
+      {
+        "id": "Amber",
+        "text": "The value has passed the Green threshold but has not reached the Red threshold. An owner and a recovery action are required."
+      },
+      {
+        "id": "Red",
+        "text": "The value is beyond the Amber threshold. Escalate to the program manager and record a decision."
+      },
+      {
+        "id": "Not configured",
+        "text": "No threshold is set for this metric, or the metric is Not Available. The portal never guesses a rating."
+      }
+    ]
+  },
+  "roles_matrix": {
+    "roleIds": [
+      "qa",
+      "tester",
+      "biz",
+      "tech",
+      "pm"
+    ],
+    "activities": [
+      [
+        "Define the test strategy and cycles",
+        "A",
+        "C",
+        "C",
+        "C",
+        "R"
+      ],
+      [
+        "Prepare and review test scripts",
+        "A",
+        "R",
+        "C",
+        "C",
+        "I"
+      ],
+      [
+        "Prepare test data and environments",
+        "C",
+        "I",
+        "I",
+        "A",
+        "I"
+      ],
+      [
+        "Provision tester and business user access",
+        "I",
+        "I",
+        "I",
+        "A",
+        "C"
+      ],
+      [
+        "Execute scripts and capture evidence",
+        "A",
+        "R",
+        "R",
+        "C",
+        "I"
+      ],
+      [
+        "Log defects",
+        "A",
+        "R",
+        "R",
+        "C",
+        "I"
+      ],
+      [
+        "Triage defects",
+        "A",
+        "C",
+        "C",
+        "R",
+        "I"
+      ],
+      [
+        "Fix defects",
+        "I",
+        "I",
+        "I",
+        "A",
+        "I"
+      ],
+      [
+        "Re-test fixed defects",
+        "A",
+        "R",
+        "R",
+        "C",
+        "I"
+      ],
+      [
+        "Validate converted data",
+        "C",
+        "I",
+        "R",
+        "A",
+        "I"
+      ],
+      [
+        "Approve entry and exit criteria",
+        "R",
+        "I",
+        "C",
+        "C",
+        "A"
+      ],
+      [
+        "Accept results and sign off UAT",
+        "C",
+        "I",
+        "A",
+        "I",
+        "R"
+      ],
+      [
+        "Report KPIs and RAG status",
+        "R",
+        "C",
+        "I",
+        "C",
+        "A"
+      ]
+    ]
+  },
+  "guides": {
+    "tester": [
+      {
+        "title": "Before you test",
+        "steps": [
+          "Confirm that the cycle has started and that its entry criteria are met.",
+          "Check that you can sign in with the role assigned to the script.",
+          "Open the script and read the preconditions and test data.",
+          "Confirm the environment is the one named in the script.",
+          "Raise any gap before you start: missing access, missing data or an unclear step."
+        ]
+      },
+      {
+        "title": "Run a script",
+        "steps": [
+          "Follow the steps in order. Do not skip or combine steps.",
+          "Compare the actual result with the expected result at each step.",
+          "Record the result for the script: Passed, Failed or Blocked.",
+          "If a step cannot be completed, stop and mark the script Blocked. Link the reason.",
+          "Mark a script Not Applicable only with approval from the QA lead."
+        ]
+      },
+      {
+        "title": "Capture evidence",
+        "steps": [
+          "Take a screenshot at each point that proves an expected result.",
+          "Show the record number, the date and your user in the screenshot where possible.",
+          "Attach evidence to the execution record, not to an email.",
+          "Name files so that a reviewer can match them to the script and step."
+        ]
+      },
+      {
+        "title": "Log a defect",
+        "steps": [
+          "Search existing defects first to avoid duplicates.",
+          "Use the defect template and complete every required field.",
+          "Set severity from business impact and propose a priority.",
+          "Link the defect to the script and the user story.",
+          "Link the defect ID back to the failed or blocked execution."
+        ]
+      },
+      {
+        "title": "Re-test",
+        "steps": [
+          "Wait for the defect to reach Resolved.",
+          "Re-run the full script, not only the failed step.",
+          "Record the new attempt. The attempt number increases by one.",
+          "If it passes, move the defect to Closed. If it fails, move it to Reopened and add the new evidence."
+        ]
+      },
+      {
+        "title": "Hand over results",
+        "steps": [
+          "Check that every executed script has a result, a date and evidence.",
+          "Check that every Failed or Blocked script has a defect or a documented disposition.",
+          "Give the QA lead your completed records before the daily status deadline."
+        ]
+      }
+    ],
+    "uat": [
+      {
+        "title": "Before you start",
+        "steps": [
+          "Make sure you have your sign-in and that you can open the test system.",
+          "Open the scripts assigned to you. Each script is one business task to try.",
+          "Ask your UAT lead if anything is unclear. Do not guess.",
+          "Have your sample data ready. Your UAT lead will tell you where to find it."
+        ]
+      },
+      {
+        "title": "Run a script",
+        "steps": [
+          "Do each step in the script in order.",
+          "After each step, check: did the system do what the script said it would?",
+          "If yes, carry on. If no, stop and note exactly what happened.",
+          "At the end, mark the script Passed, Failed or Blocked."
+        ]
+      },
+      {
+        "title": "Capture evidence",
+        "steps": [
+          "Take a screenshot when the screen shows the result you were asked to check.",
+          "Add a short comment about what you saw, especially if anything looked unusual.",
+          "Attach the screenshot to your script record."
+        ]
+      },
+      {
+        "title": "Report a problem",
+        "steps": [
+          "Tell your UAT lead or log a defect using the template.",
+          "Say what you did, what you expected and what you saw.",
+          "Attach your screenshot.",
+          "Mark the script Failed, or Blocked if you could not finish it."
+        ]
+      },
+      {
+        "title": "Re-test after a fix",
+        "steps": [
+          "You will be told when the problem is fixed.",
+          "Run the whole script again.",
+          "Record the new result and add new evidence."
+        ]
+      },
+      {
+        "title": "Accept and sign off",
+        "steps": [
+          "Accept a script only when the result matches what your business needs.",
+          "Add a comment to explain any condition on your acceptance.",
+          "When all your scripts are done, complete the UAT sign-off form with your authorized approver.",
+          "Sign-off means the business accepts the solution for the scope tested. Outstanding items must be listed."
+        ]
+      }
+    ],
+    "checklist": [
+      {
+        "group": "Before UAT",
+        "items": [
+          "I can sign in to the UAT environment.",
+          "I know which scripts are assigned to me.",
+          "I have my test data and my role.",
+          "I know who my UAT lead is."
+        ]
+      },
+      {
+        "group": "During UAT",
+        "items": [
+          "I followed each step in order.",
+          "I recorded Passed, Failed or Blocked for every script.",
+          "I attached a screenshot as evidence.",
+          "I added a comment where something looked unusual.",
+          "I reported every problem as a defect or to my UAT lead."
+        ]
+      },
+      {
+        "group": "After fixes",
+        "items": [
+          "I re-ran the whole script after each fix.",
+          "I recorded the new result and new evidence."
+        ]
+      },
+      {
+        "group": "Sign-off",
+        "items": [
+          "Every assigned script has a result and a comment.",
+          "Outstanding items are listed with an agreed owner.",
+          "The authorized approver has signed the UAT sign-off form."
+        ]
+      }
+    ]
+  },
+  "sources": {
+    "flows": [
+      {
+        "id": "jira",
+        "name": "Jira",
+        "role": "User stories and, where configured, defects.",
+        "text": "Export stories or defects to CSV and load them on the Import data tab. Map your export columns to the portal fields.",
+        "alm": false
+      },
+      {
+        "id": "alm",
+        "name": "ALM",
+        "role": "Test scripts, executions, results and, where configured, defects.",
+        "text": "A direct feed from ALM is not included in this portal.",
+        "alm": true
+      },
+      {
+        "id": "excel",
+        "name": "Excel fallback (Testing_Daily_Status.xlsx)",
+        "role": "Manual status workbook used when a source system cannot be exported.",
+        "text": "Load a sheet from the workbook on the Import data tab. Choose the sheet, then map its columns.",
+        "alm": false
+      }
+    ],
+    "dashboardNote": "The testing dashboard consumes the same definitions shown in this portal. Its link is set in the configuration.",
+    "workbook": {
+      "fileName": "Testing_Daily_Status.xlsx",
+      "sheets": [
+        {
+          "name": "Execution_Status",
+          "purpose": "One row per script with cycle, result and execution date.",
+          "kind": "tests"
+        },
+        {
+          "name": "Defect_Log",
+          "purpose": "One row per defect with severity, priority, status and dates.",
+          "kind": "defects"
+        },
+        {
+          "name": "Story_Coverage",
+          "purpose": "One row per user story with module and process.",
+          "kind": "stories"
+        },
+        {
+          "name": "Conversion_Status",
+          "purpose": "Conversion steps and record counts per data object.",
+          "kind": null
+        },
+        {
+          "name": "Readiness_Log",
+          "purpose": "Readiness dependencies including security and access.",
+          "kind": null
+        },
+        {
+          "name": "Reference_Lists",
+          "purpose": "Allowed values for cycles, modules, severities and statuses.",
+          "kind": null
+        }
+      ]
+    }
+  },
+  "enums": {
+    "cycle": {
+      "fut_tut": [
+        "fut",
+        "tut",
+        "fut/tut",
+        "unit",
+        "unit test",
+        "unit testing",
+        "functional unit testing",
+        "technical unit testing"
+      ],
+      "sit": [
+        "sit",
+        "system integration",
+        "system integration testing"
+      ],
+      "uat": [
+        "uat",
+        "user acceptance",
+        "user acceptance testing"
+      ],
+      "regression": [
+        "regression",
+        "reg",
+        "regression testing"
+      ]
+    },
+    "testStatus": {
+      "Passed": [
+        "pass",
+        "passed",
+        "ok",
+        "success"
+      ],
+      "Failed": [
+        "fail",
+        "failed",
+        "failure"
+      ],
+      "Blocked": [
+        "blocked",
+        "block"
+      ],
+      "Not Run": [
+        "not run",
+        "not executed",
+        "no run",
+        "norun"
+      ],
+      "In Progress": [
+        "in progress",
+        "running",
+        "executing"
+      ],
+      "Not Applicable": [
+        "n/a",
+        "na",
+        "not applicable"
+      ]
+    },
+    "defectStatus": {
+      "Open": [
+        "open",
+        "new",
+        "to do",
+        "backlog"
+      ],
+      "In Progress": [
+        "in progress",
+        "in development",
+        "assigned"
+      ],
+      "Resolved": [
+        "resolved",
+        "fixed",
+        "ready for retest",
+        "ready for re-test"
+      ],
+      "Closed": [
+        "closed",
+        "done",
+        "verified"
+      ],
+      "Reopened": [
+        "reopened",
+        "re-opened"
+      ]
+    },
+    "severity": {
+      "Critical": [
+        "critical",
+        "blocker",
+        "sev1",
+        "s1",
+        "1 - critical"
+      ],
+      "High": [
+        "high",
+        "major",
+        "sev2",
+        "s2",
+        "2 - high"
+      ],
+      "Medium": [
+        "medium",
+        "moderate",
+        "sev3",
+        "s3",
+        "3 - medium"
+      ],
+      "Low": [
+        "low",
+        "minor",
+        "trivial",
+        "sev4",
+        "s4",
+        "4 - low"
+      ]
+    },
+    "priority": {
+      "P1": [
+        "p1",
+        "urgent",
+        "immediate",
+        "highest",
+        "1"
+      ],
+      "P2": [
+        "p2",
+        "high",
+        "2"
+      ],
+      "P3": [
+        "p3",
+        "medium",
+        "normal",
+        "3"
+      ],
+      "P4": [
+        "p4",
+        "low",
+        "lowest",
+        "4"
+      ]
+    }
+  },
+  "dictionary": {
+    "tests": [
+      {
+        "key": "id",
+        "label": "Test ID",
+        "type": "string",
+        "required": true,
+        "description": "Unique identifier of the test script or execution record.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "test id",
+          "script id",
+          "test script id",
+          "id",
+          "key",
+          "test key"
+        ],
+        "example": "TS-001"
+      },
+      {
+        "key": "name",
+        "label": "Test name",
+        "type": "string",
+        "required": false,
+        "description": "Short title of the script.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "test name",
+          "name",
+          "title",
+          "summary",
+          "script name"
+        ],
+        "example": "Create invoice from order"
+      },
+      {
+        "key": "cycle",
+        "label": "Cycle",
+        "type": "enum",
+        "required": true,
+        "description": "Test cycle the result belongs to. Mapped to the configured cycles.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "cycle",
+          "test cycle",
+          "test phase",
+          "phase"
+        ],
+        "example": "SIT",
+        "enum": "cycle"
+      },
+      {
+        "key": "module",
+        "label": "Module",
+        "type": "string",
+        "required": false,
+        "description": "Oracle module or boundary application.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "module",
+          "application",
+          "component"
+        ],
+        "example": "Accounts Receivable"
+      },
+      {
+        "key": "process",
+        "label": "Process",
+        "type": "string",
+        "required": false,
+        "description": "Business process the script covers.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "process",
+          "business process",
+          "l2 process"
+        ],
+        "example": "Bill and invoice customers"
+      },
+      {
+        "key": "rice",
+        "label": "RICE ID",
+        "type": "string",
+        "required": false,
+        "description": "Linked RICE object, if any.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "rice id",
+          "rice",
+          "rice object",
+          "object id"
+        ],
+        "example": "RICE-I01"
+      },
+      {
+        "key": "storyKey",
+        "label": "Story key",
+        "type": "string",
+        "required": false,
+        "description": "Key of the linked user story.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "story key",
+          "story",
+          "user story",
+          "linked story",
+          "requirement",
+          "issue key"
+        ],
+        "example": "STORY-001"
+      },
+      {
+        "key": "status",
+        "label": "Result status",
+        "type": "enum",
+        "required": true,
+        "description": "Latest execution result. Mapped to Passed, Failed, Blocked, Not Run, In Progress or Not Applicable.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "status",
+          "result",
+          "execution status",
+          "test status",
+          "run status"
+        ],
+        "example": "Passed",
+        "enum": "testStatus"
+      },
+      {
+        "key": "attempt",
+        "label": "Attempt number",
+        "type": "number",
+        "required": false,
+        "description": "Attempt count for the latest result (1 = first attempt). Needed for First-Pass Yield and Re-test Pass Rate.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "attempt",
+          "attempt number",
+          "run number",
+          "execution number",
+          "retest count"
+        ],
+        "example": "1"
+      },
+      {
+        "key": "executedOn",
+        "label": "Executed on",
+        "type": "date",
+        "required": false,
+        "description": "Date of the latest execution.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "executed on",
+          "execution date",
+          "date executed",
+          "run date",
+          "last run"
+        ],
+        "example": "2026-09-14"
+      },
+      {
+        "key": "defectId",
+        "label": "Defect ID",
+        "type": "string",
+        "required": false,
+        "description": "Defect linked to the result, if any.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "defect id",
+          "defect",
+          "linked defect",
+          "bug id"
+        ],
+        "example": "DEF-001"
+      }
+    ],
+    "defects": [
+      {
+        "key": "id",
+        "label": "Defect ID",
+        "type": "string",
+        "required": true,
+        "description": "Unique identifier of the defect.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "defect id",
+          "id",
+          "issue key",
+          "key",
+          "bug id"
+        ],
+        "example": "DEF-001"
+      },
+      {
+        "key": "summary",
+        "label": "Summary",
+        "type": "string",
+        "required": false,
+        "description": "One-line description.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "summary",
+          "title",
+          "defect summary",
+          "name"
+        ],
+        "example": "Invoice total does not include tax"
+      },
+      {
+        "key": "status",
+        "label": "Defect status",
+        "type": "enum",
+        "required": true,
+        "description": "Mapped to Open, In Progress, Resolved, Closed or Reopened.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "status",
+          "defect status",
+          "state"
+        ],
+        "example": "Open",
+        "enum": "defectStatus"
+      },
+      {
+        "key": "severity",
+        "label": "Severity",
+        "type": "enum",
+        "required": true,
+        "description": "Mapped to the configured severities.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "severity",
+          "sev"
+        ],
+        "example": "High",
+        "enum": "severity"
+      },
+      {
+        "key": "priority",
+        "label": "Priority",
+        "type": "enum",
+        "required": false,
+        "description": "Mapped to the configured priorities.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "priority",
+          "prio"
+        ],
+        "example": "P2",
+        "enum": "priority"
+      },
+      {
+        "key": "cycle",
+        "label": "Cycle found",
+        "type": "enum",
+        "required": true,
+        "description": "Cycle in which the defect was found.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "cycle",
+          "test cycle",
+          "detected in cycle",
+          "found in",
+          "phase"
+        ],
+        "example": "SIT",
+        "enum": "cycle"
+      },
+      {
+        "key": "module",
+        "label": "Module",
+        "type": "string",
+        "required": false,
+        "description": "Oracle module or boundary application.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "module",
+          "application",
+          "component"
+        ],
+        "example": "Fusion Tax"
+      },
+      {
+        "key": "process",
+        "label": "Process",
+        "type": "string",
+        "required": false,
+        "description": "Business process affected.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "process",
+          "business process"
+        ],
+        "example": "Calculate US sales and use tax"
+      },
+      {
+        "key": "rice",
+        "label": "RICE ID",
+        "type": "string",
+        "required": false,
+        "description": "Linked RICE object, if any.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "rice id",
+          "rice",
+          "rice object"
+        ],
+        "example": "RICE-I02"
+      },
+      {
+        "key": "storyKey",
+        "label": "Story key",
+        "type": "string",
+        "required": false,
+        "description": "Key of the linked user story.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "story key",
+          "story",
+          "user story",
+          "linked story"
+        ],
+        "example": "STORY-004"
+      },
+      {
+        "key": "testId",
+        "label": "Test ID",
+        "type": "string",
+        "required": false,
+        "description": "Test script that found the defect.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "test id",
+          "script id",
+          "test script id",
+          "found by test"
+        ],
+        "example": "TS-012"
+      },
+      {
+        "key": "created",
+        "label": "Created",
+        "type": "date",
+        "required": true,
+        "description": "Date the defect was logged.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "created",
+          "created date",
+          "date created",
+          "opened",
+          "date logged"
+        ],
+        "example": "2026-09-01"
+      },
+      {
+        "key": "resolved",
+        "label": "Resolved",
+        "type": "date",
+        "required": false,
+        "description": "Date the fix was delivered.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "resolved",
+          "resolved date",
+          "date resolved",
+          "fixed on"
+        ],
+        "example": "2026-09-05"
+      },
+      {
+        "key": "escapedFrom",
+        "label": "Escaped from cycle",
+        "type": "enum",
+        "required": false,
+        "description": "Earlier cycle in which the defect should have been found. Used for Defect Leakage.",
+        "sources": [
+          "Jira",
+          "ALM",
+          "Excel"
+        ],
+        "aliases": [
+          "escaped from",
+          "should have been found in",
+          "leaked from",
+          "origin cycle"
+        ],
+        "example": "FUT/TUT",
+        "enum": "cycle"
+      }
+    ],
+    "stories": [
+      {
+        "key": "key",
+        "label": "Story key",
+        "type": "string",
+        "required": true,
+        "description": "Unique identifier of the user story.",
+        "sources": [
+          "Jira",
+          "Excel"
+        ],
+        "aliases": [
+          "story key",
+          "key",
+          "issue key",
+          "id"
+        ],
+        "example": "STORY-001"
+      },
+      {
+        "key": "summary",
+        "label": "Summary",
+        "type": "string",
+        "required": false,
+        "description": "One-line description.",
+        "sources": [
+          "Jira",
+          "Excel"
+        ],
+        "aliases": [
+          "summary",
+          "title",
+          "name"
+        ],
+        "example": "Bill and invoice customers"
+      },
+      {
+        "key": "module",
+        "label": "Module",
+        "type": "string",
+        "required": false,
+        "description": "Oracle module or boundary application.",
+        "sources": [
+          "Jira",
+          "Excel"
+        ],
+        "aliases": [
+          "module",
+          "application",
+          "component"
+        ],
+        "example": "Accounts Receivable"
+      },
+      {
+        "key": "process",
+        "label": "Process",
+        "type": "string",
+        "required": false,
+        "description": "Business process.",
+        "sources": [
+          "Jira",
+          "Excel"
+        ],
+        "aliases": [
+          "process",
+          "business process"
+        ],
+        "example": "Bill and invoice customers"
+      },
+      {
+        "key": "rice",
+        "label": "RICE ID",
+        "type": "string",
+        "required": false,
+        "description": "Linked RICE object, if any.",
+        "sources": [
+          "Jira",
+          "Excel"
+        ],
+        "aliases": [
+          "rice id",
+          "rice",
+          "rice object"
+        ],
+        "example": "RICE-I01"
+      }
+    ]
+  },
+  "quality": {
+    "rules": [
+      {
+        "id": "DQ-01",
+        "check": "cycleMissing",
+        "applies": "Test results",
+        "rule": "Every test result has a cycle that maps to a configured cycle.",
+        "fix": "Add or correct the cycle in the source, or add the spelling to the cycle aliases in the configuration."
+      },
+      {
+        "id": "DQ-02",
+        "check": "statusUnmapped",
+        "applies": "Test results and defects",
+        "rule": "Every status value maps to a known status.",
+        "fix": "Correct the status in the source, or add the spelling to the status aliases in the configuration."
+      },
+      {
+        "id": "DQ-03",
+        "check": "duplicateTests",
+        "applies": "Test results",
+        "rule": "A test ID appears only once per cycle.",
+        "fix": "Remove the duplicate rows or keep only the latest result per script."
+      },
+      {
+        "id": "DQ-04",
+        "check": "executedNoDate",
+        "applies": "Test results",
+        "rule": "Every Passed, Failed or Blocked result has an execution date.",
+        "fix": "Record the execution date in the source system."
+      },
+      {
+        "id": "DQ-05",
+        "check": "failedNoDefect",
+        "applies": "Test results",
+        "rule": "Every Failed or Blocked result is linked to a defect, or has a documented disposition.",
+        "fix": "Log a defect and link it, or record the disposition."
+      },
+      {
+        "id": "DQ-06",
+        "check": "defectNoStory",
+        "applies": "Defects",
+        "rule": "Every defect is linked to a user story.",
+        "fix": "Link the defect to its story in the source system."
+      },
+      {
+        "id": "DQ-07",
+        "check": "storyNoScript",
+        "applies": "User stories",
+        "rule": "Every in-scope story has at least one test script.",
+        "fix": "Write or link a script, or mark the story out of scope with approval."
+      },
+      {
+        "id": "DQ-08",
+        "check": "mappingMissing",
+        "applies": "Test results, defects and stories",
+        "rule": "Records carry a module and a process. RICE ID is expected only where a RICE object is involved.",
+        "fix": "Fill in the missing fields in the source system and re-load."
+      },
+      {
+        "id": "DQ-09",
+        "check": "badDates",
+        "applies": "Test results and defects",
+        "rule": "Dates can be read and are not in the future.",
+        "fix": "Correct the date format in the source, for example 2026-09-14."
+      },
+      {
+        "id": "DQ-10",
+        "check": "conversionNoEvidence",
+        "applies": "Data conversion",
+        "rule": "No conversion step is marked Complete without evidence.",
+        "fix": "Attach the evidence reference or change the step status."
+      }
+    ]
+  },
+  "templates": [
+    {
+      "id": "t_script",
+      "name": "Test script",
+      "purpose": "Define the steps and expected results for one scenario.",
+      "body": "TEST SCRIPT\nScript ID: [Enter script ID]\nTitle: [Enter a short title]\nCycle: [FUT/TUT | SIT | UAT]\nModule and process: [Enter module] / [Enter process]\nRICE reference: [Enter RICE ID or \"None\"]\nLinked user story: [Enter story key]\nAuthor / reviewer: [Enter names]\n\nPreconditions: [Enter setup needed before the first step]\nTest data: [Enter data records or where to find them]\nRole / user to test with: [Enter role]\n\nSteps\n1. Action: [Enter action]    Expected result: [Enter expected result]\n2. Action: [Enter action]    Expected result: [Enter expected result]\n3. Action: [Enter action]    Expected result: [Enter expected result]\n\nPostconditions: [Enter state after the test]\nNotes: [Enter notes]"
+    },
+    {
+      "id": "t_exec",
+      "name": "Test execution record",
+      "purpose": "Record one run of one script.",
+      "body": "TEST EXECUTION RECORD\nScript ID: [Enter script ID]\nCycle: [FUT/TUT | SIT | UAT]\nAttempt number: [1 for first attempt]\nTester: [Enter name]\nDate executed: [Enter date]\nEnvironment: [Enter environment]\nResult: [Passed | Failed | Blocked | Not Run | In Progress | Not Applicable]\nDefect ID (if Failed or Blocked): [Enter defect ID or documented disposition]\nEvidence reference: [Enter file name or link]\nComments: [Enter comments]"
+    },
+    {
+      "id": "t_defect",
+      "name": "Defect report",
+      "purpose": "Log a defect with everything a fixer needs.",
+      "body": "DEFECT REPORT\nSummary: [Name the object and the problem]\nCycle found: [FUT/TUT | SIT | UAT]\nModule / process / RICE ID: [Enter] / [Enter] / [Enter or \"None\"]\nLinked story: [Enter story key]\nLinked test script: [Enter script ID]\nEnvironment and test data: [Enter environment and data used]\n\nSteps to reproduce\n1. [Enter step]\n2. [Enter step]\n3. [Enter step]\n\nExpected result: [Enter]\nActual result: [Enter]\nSeverity: [Critical | High | Medium | Low]\nPriority: [P1 | P2 | P3 | P4]\nEvidence attached: [Enter file name or link]\nReported by / date: [Enter name] / [Enter date]\nEscaped from an earlier cycle? [No | Yes - enter cycle]"
+    },
+    {
+      "id": "t_uat",
+      "name": "UAT sign-off",
+      "purpose": "Record the business acceptance of the tested scope.",
+      "body": "UAT SIGN-OFF\nProgram: [Enter program name]\nScope tested: [Enter modules and processes]\nUAT period: [Enter start date] to [Enter end date]\nScripts planned / executed / accepted: [Enter] / [Enter] / [Enter]\nOpen defects by severity: [Enter counts]\nOutstanding items and agreed owners:\n1. [Enter item] - [Enter owner] - [Enter due date]\n\nAcceptance statement: On behalf of [Enter business area], I accept the tested scope subject to the outstanding items above.\nApprover name and role: [Enter]\nSignature / approval reference: [Enter]\nDate: [Enter date]"
+    },
+    {
+      "id": "t_checklist",
+      "name": "Entry / exit checklist",
+      "purpose": "Confirm that a cycle can start or close.",
+      "body": "ENTRY / EXIT CHECKLIST\nCycle: [FUT/TUT | SIT | UAT]\nCheckpoint: [Entry | Exit]\nDate reviewed: [Enter date]\n\nCriterion | Owner | Evidence reference | Threshold (from configuration) | Met? (Yes / No / Waived)\n[Enter criterion] | [Enter owner] | [Enter evidence] | [Enter threshold] | [Enter]\n[Enter criterion] | [Enter owner] | [Enter evidence] | [Enter threshold] | [Enter]\n\nWaivers and approvers: [Enter waiver detail and approver]\nDecision: [Proceed | Proceed with conditions | Do not proceed]"
+    },
+    {
+      "id": "t_ready",
+      "name": "Readiness dependency log",
+      "purpose": "Track dependencies such as access, data and environments.",
+      "body": "READINESS DEPENDENCY LOG\nID: [Enter]\nDependency: [Enter, for example user access, data load, environment refresh]\nNeeded by cycle: [FUT/TUT | SIT | UAT]\nNeeded by date: [Enter date]\nOwner: [Enter name]\nStatus: [Not started | In progress | Complete]\nEvidence of completion: [Enter reference]\nImpact if late: [Enter]\nEscalation contact: [Enter]\nNote: this log tracks readiness. It does not record test results."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "ALM",
+      "def": "Application lifecycle management tool used to hold test scripts, executions and results. Direct feeds from ALM require an adapter."
+    },
+    {
+      "term": "Accounts Receivable",
+      "def": "Oracle Fusion module for customer invoices, receipts and balances."
+    },
+    {
+      "term": "Acceptance",
+      "def": "A business user's confirmation that a script result meets business needs."
+    },
+    {
+      "term": "Aging",
+      "def": "Number of days a defect has been open."
+    },
+    {
+      "term": "Blocked",
+      "def": "A script that could not be completed because of a defect, data or environment dependency."
+    },
+    {
+      "term": "Boundary application",
+      "def": "A system outside the Oracle Fusion modules that exchanges data with them."
+    },
+    {
+      "term": "BOM",
+      "def": "Bill of materials: the list of components that make up an item."
+    },
+    {
+      "term": "Cloud Tax for European VAT",
+      "def": "Tax capability covering European VAT. The country in scope is set in the configuration."
+    },
+    {
+      "term": "Conversion",
+      "def": "Moving data from a legacy system into Oracle Fusion Cloud ERP."
+    },
+    {
+      "term": "Cutover",
+      "def": "The planned move of business operations from the old system to the new one. Mock cutovers rehearse it."
+    },
+    {
+      "term": "Data access set",
+      "def": "A security setting that controls which data a user can see and change."
+    },
+    {
+      "term": "Defect leakage",
+      "def": "Share of defects found in a cycle that should have been found in an earlier cycle."
+    },
+    {
+      "term": "Entry criteria",
+      "def": "Conditions that must be met before a test cycle starts."
+    },
+    {
+      "term": "Exit criteria",
+      "def": "Conditions that must be met before a test cycle closes."
+    },
+    {
+      "term": "Extension",
+      "def": "A RICE object that adds custom behavior around Oracle Fusion. Extensions are not modifications to Oracle-provided base code."
+    },
+    {
+      "term": "First-Pass Yield",
+      "def": "Share of executed scripts that passed on the first attempt."
+    },
+    {
+      "term": "Fusion Tax",
+      "def": "Oracle Fusion capability for determining and calculating transaction tax."
+    },
+    {
+      "term": "FUT",
+      "def": "Functional unit testing: testing individual functions with mock data."
+    },
+    {
+      "term": "Interface",
+      "def": "A RICE object that moves data between Oracle Fusion and another system."
+    },
+    {
+      "term": "Jira",
+      "def": "Work tracking tool used for user stories and, where configured, defects."
+    },
+    {
+      "term": "Mock data",
+      "def": "Made-up or masked data used in early testing."
+    },
+    {
+      "term": "Pod refresh",
+      "def": "Refreshing an Oracle cloud test environment from another environment. Access should be re-checked afterwards."
+    },
+    {
+      "term": "RAG",
+      "def": "Red, Amber, Green status rating."
+    },
+    {
+      "term": "Regression testing",
+      "def": "Re-testing existing functions to confirm that a change did not break them."
+    },
+    {
+      "term": "Report (RICE)",
+      "def": "A RICE object that presents Oracle Fusion data in a defined layout."
+    },
+    {
+      "term": "RICE",
+      "def": "Reports, Interfaces, Conversions and Extensions: the types of custom objects built around the standard solution."
+    },
+    {
+      "term": "SIT",
+      "def": "System integration testing: end-to-end testing across modules and boundary applications."
+    },
+    {
+      "term": "SoD",
+      "def": "Segregation of duties: preventing one person from holding conflicting responsibilities."
+    },
+    {
+      "term": "Sign-off",
+      "def": "A formal record that an authorized approver accepts a result or a scope."
+    },
+    {
+      "term": "Subscription Management",
+      "def": "Oracle Fusion module for subscription products and their lifecycle."
+    },
+    {
+      "term": "TUT",
+      "def": "Technical unit testing: testing individual technical components such as interfaces and extensions."
+    },
+    {
+      "term": "UAT",
+      "def": "User acceptance testing: business users confirm the solution meets their needs."
+    },
+    {
+      "term": "Vertex",
+      "def": "Third-party tax engine integrated for US B2B sales and use tax."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Why are FUT/TUT, SIT and UAT never combined into one pass rate?",
+      "a": "They use different data, different testers and different goals. A combined rate would hide the real status of each cycle. Combine them only when the definitions are comparable and the combined figure is labeled."
+    },
+    {
+      "q": "Does Not Run count as a failure or as a pass?",
+      "a": "Neither. Not Run is excluded from the pass, fail and block rates. It lowers Execution %."
+    },
+    {
+      "q": "What if a metric cannot be calculated?",
+      "a": "The portal shows Not Available with the reason, for example a zero denominator or missing source data. It never shows zero for missing data."
+    },
+    {
+      "q": "Can I load data from Jira or ALM?",
+      "a": "Yes, from exports. Open Data sources and integration, choose the Import data tab and map your columns. A direct live connection is not included. ALM-specific details are marked ALM adapter required."
+    },
+    {
+      "q": "Where do thresholds come from?",
+      "a": "From portal-config.json. Entry and exit thresholds and RAG thresholds are read from it. Any threshold that is not set shows To be confirmed by project team."
+    },
+    {
+      "q": "What is the difference between severity and priority?",
+      "a": "Severity is the business impact of the defect. Priority is how soon it should be fixed."
+    },
+    {
+      "q": "Is security access a test result?",
+      "a": "No. It is a readiness dependency unless an explicit test record exists."
+    },
+    {
+      "q": "How do I add a module or a cycle?",
+      "a": "Edit portal-config.json. See the instructions in the README. No page code needs to change."
+    },
+    {
+      "q": "What does 'complete' mean for a data conversion step?",
+      "a": "A step is complete only when source evidence is recorded. A step marked Complete without evidence is shown as not counted."
+    },
+    {
+      "q": "Is anything stored in my browser?",
+      "a": "No. The portal does not use localStorage or sessionStorage. Imported data lives in memory until you reload the page."
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "A-01",
+      "text": "The portal is a reference site. It reads exported files only and makes no live connection to Jira, ALM or any other system."
+    },
+    {
+      "id": "A-02",
+      "text": "All sample content for the program called Lime is fictional and generic: processes, RICE object names, module links, criteria owners, RACI letters, glossary text and sample records."
+    },
+    {
+      "id": "A-03",
+      "text": "Sample RAG thresholds exist for three metrics only (Execution %, Pass rate, average defect age) and are illustrative. Aging bucket boundaries are illustrative. All other thresholds, limits and SLAs are not set."
+    },
+    {
+      "id": "A-04",
+      "text": "Execution % uses Passed + Failed + Blocked as the numerator and all planned, applicable scripts (Not Applicable excluded) as the denominator."
+    },
+    {
+      "id": "A-05",
+      "text": "Defect Leakage is calculated for the receiving cycle: defects found in the cycle and attributed to an earlier cycle, divided by all defects found in the cycle."
+    },
+    {
+      "id": "A-06",
+      "text": "Open defects are those with status Open, In Progress or Reopened. Resolved and Closed are not counted as open."
+    },
+    {
+      "id": "A-07",
+      "text": "Status, severity, priority and cycle aliases (for example To Do mapped to Open) are generic and editable. Values that match no alias are flagged as unmapped, never guessed."
+    },
+    {
+      "id": "A-08",
+      "text": "Sheet names and purposes for Testing_Daily_Status.xlsx are placeholders and must be confirmed against the real workbook."
+    },
+    {
+      "id": "A-09",
+      "text": "The defect lifecycle transitions shown are generic and must be confirmed against the workflow in the defect source system."
+    },
+    {
+      "id": "A-10",
+      "text": "Only the RICE complexity distribution (3 Simple, 6 Medium, 4 Complex, 7 Very Complex) comes from the scope. Object names, types and module links are illustrative."
+    },
+    {
+      "id": "A-11",
+      "text": "'Clientes' in the conversion object list is treated as Customers and covered by Customer Master."
+    },
+    {
+      "id": "A-12",
+      "text": "Vertex integration is treated as an integration / boundary application. How it is tested in each cycle is to be confirmed."
+    },
+    {
+      "id": "A-13",
+      "text": "Severity and priority definitions and the severity/priority matrix are generic industry conventions, not Oracle- or client-specific rules."
+    },
+    {
+      "id": "A-14",
+      "text": "First-Pass Yield and Re-test Pass Rate need an attempt number per result. Without it, they show Not Available."
+    },
+    {
+      "id": "A-15",
+      "text": "ALM-specific connection details are not provided. Exports from ALM can be loaded as CSV or Excel files. A direct feed needs an ALM adapter."
+    },
+    {
+      "id": "A-16",
+      "text": "Each test and defect row is assigned to a cycle through the cycle aliases. Rows that match no alias are reported as unmapped and are not merged into any cycle."
+    },
+    {
+      "id": "A-17",
+      "text": "The portal is one HTML file that loads Chart.js and SheetJS from a public CDN. Open it with internet access. Open Sans loads from Google Fonts and falls back to Arial."
+    },
+    {
+      "id": "A-18",
+      "text": "Imported data is held in memory only. Reloading the page returns to the configuration and sample data."
+    },
+    {
+      "id": "A-19",
+      "text": "Imported dates are read in ISO format and common day-month-year formats. Unreadable dates are flagged and are not guessed."
+    },
+    {
+      "id": "A-20",
+      "text": "Coverage % counts all loaded stories as in scope because no out-of-scope flag exists in the sample dictionary."
+    },
+    {
+      "id": "A-21",
+      "text": "Entry and exit criteria owners and evidence names are illustrative. Thresholds are not set."
+    },
+    {
+      "id": "A-22",
+      "text": "The escalation path levels and the roles in the RACI table are illustrative. Triggers are not set."
+    },
+    {
+      "id": "A-23",
+      "text": "Fixed record counts for Customer Master and Product Master, conversion evidence references, and conversion step statuses are sample values."
+    }
+  ],
+  "openItems": [
+    {
+      "id": "O-01",
+      "item": "Confirm the client and program name, and the go-live date.",
+      "owner": "Program manager"
+    },
+    {
+      "id": "O-02",
+      "item": "Confirm the final module list, exclusions and process-to-module mapping.",
+      "owner": "QA lead / Solution architect"
+    },
+    {
+      "id": "O-03",
+      "item": "Confirm the European tax country for Cloud Tax.",
+      "owner": "Program manager"
+    },
+    {
+      "id": "O-04",
+      "item": "Confirm how Vertex integration is tested in SIT and UAT.",
+      "owner": "Technical owner"
+    },
+    {
+      "id": "O-05",
+      "item": "Provide entry and exit thresholds, including the SIT data completeness threshold.",
+      "owner": "QA lead"
+    },
+    {
+      "id": "O-06",
+      "item": "Provide RAG thresholds for every KPI.",
+      "owner": "Program manager"
+    },
+    {
+      "id": "O-07",
+      "item": "Provide defect response and resolution SLAs by severity.",
+      "owner": "QA lead"
+    },
+    {
+      "id": "O-08",
+      "item": "Confirm the defect source of truth: Jira, ALM or both.",
+      "owner": "QA lead"
+    },
+    {
+      "id": "O-09",
+      "item": "Confirm ALM version, export method and whether an adapter is planned.",
+      "owner": "Technical owner"
+    },
+    {
+      "id": "O-10",
+      "item": "Provide Jira project keys, workflow status names and custom field names.",
+      "owner": "QA lead"
+    },
+    {
+      "id": "O-11",
+      "item": "Provide the real layout of Testing_Daily_Status.xlsx.",
+      "owner": "QA lead"
+    },
+    {
+      "id": "O-12",
+      "item": "Provide the testing dashboard URL.",
+      "owner": "Program manager"
+    },
+    {
+      "id": "O-13",
+      "item": "Confirm the RICE object list, owners and complexity ratings.",
+      "owner": "Technical owner"
+    },
+    {
+      "id": "O-14",
+      "item": "Confirm the conversion object list, expected record counts and the evidence repository.",
+      "owner": "Data lead"
+    },
+    {
+      "id": "O-15",
+      "item": "Confirm security design status, SoD approach and the pod refresh schedule.",
+      "owner": "Technical owner"
+    },
+    {
+      "id": "O-16",
+      "item": "Confirm the SIT business stakeholders and the UAT approvers.",
+      "owner": "Program manager / Business lead"
+    },
+    {
+      "id": "O-17",
+      "item": "Decide whether a regression cycle is needed and, if so, define it.",
+      "owner": "Program manager"
+    },
+    {
+      "id": "O-18",
+      "item": "Confirm the escalation path, triggers and the RACI.",
+      "owner": "Program manager"
+    }
+  ],
+  "selfCheck": [
+    "Navigation: open every page from the left menu. The page title changes and focus moves to the main heading.",
+    "Role path: choose each role in Start here. A numbered path appears and the links open the right pages.",
+    "Search: type 'denominator'. Results appear. Use the arrow keys and Enter to open one. Press Escape to close the list.",
+    "Filters: on Scope, RICE and Defects, change each filter. The row counts update and Clear filters restores them.",
+    "Calculator: on Metrics, calculate Pass rate with Passed 25, Failed 3, Blocked 2, Not Run 10. Expect 83.3% with denominator 30.",
+    "Missing data: clear one input in the calculator. Expect Not Available with a reason, not 0.",
+    "Zero denominator: enter 0 for Passed, Failed and Blocked. Expect Not Available.",
+    "Import: load a file from the sample-imports folder. The data banner changes and the pages update.",
+    "Modal: open a KPI or template. Press Escape. The dialog closes and focus returns to the button.",
+    "Copy and print: copy a template and paste it elsewhere. Print a template and the UAT checklist.",
+    "Keyboard only: tab through a page. Focus is always visible and nothing is skipped or trapped.",
+    "Contrast and zoom: zoom to 200% and check the layout. Check that status chips show text as well as color.",
+    "Storage: confirm in browser tools that localStorage and sessionStorage are empty."
+  ],
+  "sampleData": {
+    "note": "Fictional demo records. Dates are stored as days before the page is opened.",
+    "tests": [
+      {
+        "id": "TS-001",
+        "name": "Sample script TS-001: maintain product and pricing setup",
+        "cycle": "fut_tut",
+        "module": "pm",
+        "process": "P01",
+        "rice": null,
+        "storyKey": "STORY-001",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-002",
+        "name": "Sample script TS-002: capture and import orders",
+        "cycle": "fut_tut",
+        "module": "om",
+        "process": "P02",
+        "rice": null,
+        "storyKey": "STORY-002",
+        "status": "Passed",
+        "attempt": 2,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-003",
+        "name": "Sample script TS-003: manage the subscription lifecycle",
+        "cycle": "fut_tut",
+        "module": "sub",
+        "process": "P03",
+        "rice": "RICE-R03",
+        "storyKey": "STORY-003",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 42,
+        "defectId": null
+      },
+      {
+        "id": "TS-004",
+        "name": "Sample script TS-004: calculate us sales and use tax",
+        "cycle": "fut_tut",
+        "module": "vertex",
+        "process": "P04",
+        "rice": null,
+        "storyKey": "STORY-004",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 57,
+        "defectId": null
+      },
+      {
+        "id": "TS-005",
+        "name": "Sample script TS-005: calculate european vat",
+        "cycle": "fut_tut",
+        "module": "eutax",
+        "process": "P05",
+        "rice": null,
+        "storyKey": "STORY-005",
+        "status": "Not Applicable",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-006",
+        "name": "Sample script TS-006: bill and invoice customers",
+        "cycle": "fut_tut",
+        "module": "ar",
+        "process": null,
+        "rice": "RICE-R01",
+        "storyKey": "STORY-006",
+        "status": "Passed",
+        "attempt": 2,
+        "executedDaysAgo": 24,
+        "defectId": null
+      },
+      {
+        "id": "TS-007",
+        "name": "Sample script TS-007: recognize revenue",
+        "cycle": "fut_tut",
+        "module": "rm",
+        "process": null,
+        "rice": null,
+        "storyKey": "STORY-007",
+        "status": "Passed",
+        "attempt": 2,
+        "executedDaysAgo": 37,
+        "defectId": null
+      },
+      {
+        "id": "TS-008",
+        "name": "Sample script TS-008: apply receipts and reconcile cash",
+        "cycle": "fut_tut",
+        "module": "cm",
+        "process": null,
+        "rice": null,
+        "storyKey": "STORY-008",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 24,
+        "defectId": null
+      },
+      {
+        "id": "TS-009",
+        "name": "Sample script TS-009: manage collections and dunning",
+        "cycle": "fut_tut",
+        "module": "col",
+        "process": "P09",
+        "rice": "RICE-I06",
+        "storyKey": "STORY-009",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 39,
+        "defectId": null
+      },
+      {
+        "id": "TS-010",
+        "name": "Sample script TS-010: convert and reconcile data",
+        "cycle": "fut_tut",
+        "module": "ar",
+        "process": "P10",
+        "rice": null,
+        "storyKey": "STORY-010",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 48,
+        "defectId": null
+      },
+      {
+        "id": "TS-011",
+        "name": "Sample script TS-011: maintain product and pricing setup",
+        "cycle": "fut_tut",
+        "module": "pm",
+        "process": "P01",
+        "rice": null,
+        "storyKey": "STORY-011",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 44,
+        "defectId": null
+      },
+      {
+        "id": "TS-012",
+        "name": "Sample script TS-012: capture and import orders",
+        "cycle": "fut_tut",
+        "module": "om",
+        "process": "P02",
+        "rice": "RICE-I01",
+        "storyKey": "STORY-012",
+        "status": "Passed",
+        "attempt": 2,
+        "executedDaysAgo": 42,
+        "defectId": null
+      },
+      {
+        "id": "TS-013",
+        "name": "Sample script TS-013: manage the subscription lifecycle",
+        "cycle": "fut_tut",
+        "module": "sub",
+        "process": "P03",
+        "rice": null,
+        "storyKey": "STORY-013",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 49,
+        "defectId": null
+      },
+      {
+        "id": "TS-014",
+        "name": "Sample script TS-014: calculate us sales and use tax",
+        "cycle": "fut_tut",
+        "module": "vertex",
+        "process": "P04",
+        "rice": null,
+        "storyKey": "STORY-014",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-015",
+        "name": "Sample script TS-015: calculate european vat",
+        "cycle": "fut_tut",
+        "module": "eutax",
+        "process": "P05",
+        "rice": "RICE-E05",
+        "storyKey": "STORY-015",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 59,
+        "defectId": null
+      },
+      {
+        "id": "TS-016",
+        "name": "Sample script TS-016: bill and invoice customers",
+        "cycle": "fut_tut",
+        "module": "ar",
+        "process": "P06",
+        "rice": null,
+        "storyKey": "STORY-016",
+        "status": "Failed",
+        "attempt": 1,
+        "executedDaysAgo": 23,
+        "defectId": "DEF-001"
+      },
+      {
+        "id": "TS-017",
+        "name": "Sample script TS-017: recognize revenue",
+        "cycle": "fut_tut",
+        "module": "rm",
+        "process": "P07",
+        "rice": null,
+        "storyKey": "STORY-017",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 38,
+        "defectId": null
+      },
+      {
+        "id": "TS-018",
+        "name": "Sample script TS-018: apply receipts and reconcile cash",
+        "cycle": "fut_tut",
+        "module": "cm",
+        "process": "P08",
+        "rice": "RICE-I05",
+        "storyKey": "STORY-018",
+        "status": "Blocked",
+        "attempt": 1,
+        "executedDaysAgo": 28,
+        "defectId": "DEF-008"
+      },
+      {
+        "id": "TS-019",
+        "name": "Sample script TS-019: manage collections and dunning",
+        "cycle": "fut_tut",
+        "module": "col",
+        "process": "P09",
+        "rice": null,
+        "storyKey": "STORY-019",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 45,
+        "defectId": null
+      },
+      {
+        "id": "TS-020",
+        "name": "Sample script TS-020: convert and reconcile data",
+        "cycle": "fut_tut",
+        "module": "ar",
+        "process": "P10",
+        "rice": null,
+        "storyKey": "STORY-020",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-021",
+        "name": "Sample script TS-021: maintain product and pricing setup",
+        "cycle": "fut_tut",
+        "module": "pm",
+        "process": "P01",
+        "rice": "RICE-I03",
+        "storyKey": "STORY-021",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-022",
+        "name": "Sample script TS-022: capture and import orders",
+        "cycle": "fut_tut",
+        "module": "om",
+        "process": "P02",
+        "rice": null,
+        "storyKey": "STORY-022",
+        "status": "Failed",
+        "attempt": 1,
+        "executedDaysAgo": 51,
+        "defectId": "DEF-002"
+      },
+      {
+        "id": "TS-023",
+        "name": "Sample script TS-023: manage the subscription lifecycle",
+        "cycle": "fut_tut",
+        "module": "sub",
+        "process": "P03",
+        "rice": null,
+        "storyKey": "STORY-023",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 48,
+        "defectId": null
+      },
+      {
+        "id": "TS-024",
+        "name": "Sample script TS-024: calculate us sales and use tax",
+        "cycle": "fut_tut",
+        "module": "vertex",
+        "process": "P04",
+        "rice": "RICE-I02",
+        "storyKey": "STORY-024",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 37,
+        "defectId": null
+      },
+      {
+        "id": "TS-025",
+        "name": "Sample script TS-025: calculate european vat",
+        "cycle": "fut_tut",
+        "module": "eutax",
+        "process": "P05",
+        "rice": null,
+        "storyKey": "STORY-025",
+        "status": "Passed",
+        "attempt": 2,
+        "executedDaysAgo": 47,
+        "defectId": null
+      },
+      {
+        "id": "TS-026",
+        "name": "Sample script TS-026: bill and invoice customers",
+        "cycle": "fut_tut",
+        "module": "ar",
+        "process": "P06",
+        "rice": null,
+        "storyKey": "STORY-026",
+        "status": "Passed",
+        "attempt": 2,
+        "executedDaysAgo": 37,
+        "defectId": null
+      },
+      {
+        "id": "TS-027",
+        "name": "Sample script TS-027: recognize revenue",
+        "cycle": "fut_tut",
+        "module": "rm",
+        "process": "P07",
+        "rice": "RICE-R02",
+        "storyKey": "STORY-027",
+        "status": "Failed",
+        "attempt": 1,
+        "executedDaysAgo": 42,
+        "defectId": "DEF-003"
+      },
+      {
+        "id": "TS-028",
+        "name": "Sample script TS-028: apply receipts and reconcile cash",
+        "cycle": "fut_tut",
+        "module": "cm",
+        "process": "P08",
+        "rice": null,
+        "storyKey": "STORY-028",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 44,
+        "defectId": null
+      },
+      {
+        "id": "TS-029",
+        "name": "Sample script TS-029: manage collections and dunning",
+        "cycle": "fut_tut",
+        "module": "col",
+        "process": "P09",
+        "rice": null,
+        "storyKey": "STORY-029",
+        "status": "Failed",
+        "attempt": 2,
+        "executedDaysAgo": 29,
+        "defectId": "DEF-004"
+      },
+      {
+        "id": "TS-030",
+        "name": "Sample script TS-030: convert and reconcile data",
+        "cycle": "fut_tut",
+        "module": "ar",
+        "process": "P10",
+        "rice": "RICE-R01",
+        "storyKey": "STORY-030",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-031",
+        "name": "Sample script TS-031: maintain product and pricing setup",
+        "cycle": "fut_tut",
+        "module": "pm",
+        "process": "P01",
+        "rice": null,
+        "storyKey": "STORY-031",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 29,
+        "defectId": null
+      },
+      {
+        "id": "TS-032",
+        "name": "Sample script TS-032: capture and import orders",
+        "cycle": "fut_tut",
+        "module": "om",
+        "process": "P02",
+        "rice": null,
+        "storyKey": "STORY-032",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 34,
+        "defectId": null
+      },
+      {
+        "id": "TS-033",
+        "name": "Sample script TS-033: manage the subscription lifecycle",
+        "cycle": "fut_tut",
+        "module": "sub",
+        "process": "P03",
+        "rice": "RICE-R03",
+        "storyKey": "STORY-033",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 57,
+        "defectId": null
+      },
+      {
+        "id": "TS-034",
+        "name": "Sample script TS-034: calculate us sales and use tax",
+        "cycle": "fut_tut",
+        "module": "vertex",
+        "process": "P04",
+        "rice": null,
+        "storyKey": "STORY-034",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-035",
+        "name": "Sample script TS-035: calculate european vat",
+        "cycle": "fut_tut",
+        "module": "eutax",
+        "process": "P05",
+        "rice": null,
+        "storyKey": "STORY-035",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 38,
+        "defectId": null
+      },
+      {
+        "id": "TS-036",
+        "name": "Sample script TS-036: bill and invoice customers",
+        "cycle": "fut_tut",
+        "module": "ar",
+        "process": "P06",
+        "rice": "RICE-R01",
+        "storyKey": "STORY-036",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 46,
+        "defectId": null
+      },
+      {
+        "id": "TS-037",
+        "name": "Sample script TS-037: maintain product and pricing setup",
+        "cycle": "fut_tut",
+        "module": "pm",
+        "process": "P01",
+        "rice": null,
+        "storyKey": "STORY-001",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 59,
+        "defectId": null
+      },
+      {
+        "id": "TS-038",
+        "name": "Sample script TS-038: capture and import orders",
+        "cycle": "fut_tut",
+        "module": "om",
+        "process": "P02",
+        "rice": null,
+        "storyKey": "STORY-002",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 28,
+        "defectId": null
+      },
+      {
+        "id": "TS-039",
+        "name": "Sample script TS-039: manage the subscription lifecycle",
+        "cycle": "fut_tut",
+        "module": "sub",
+        "process": "P03",
+        "rice": "RICE-R03",
+        "storyKey": "STORY-003",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-040",
+        "name": "Sample script TS-040: calculate us sales and use tax",
+        "cycle": "fut_tut",
+        "module": "vertex",
+        "process": "P04",
+        "rice": null,
+        "storyKey": "STORY-004",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 52,
+        "defectId": null
+      },
+      {
+        "id": "TS-041",
+        "name": "Sample script TS-041: calculate european vat",
+        "cycle": "fut_tut",
+        "module": "eutax",
+        "process": "P05",
+        "rice": null,
+        "storyKey": "STORY-005",
+        "status": "In Progress",
+        "attempt": 1,
+        "executedDaysAgo": 1,
+        "defectId": null
+      },
+      {
+        "id": "TS-042",
+        "name": "Sample script TS-042: bill and invoice customers",
+        "cycle": "fut_tut",
+        "module": "ar",
+        "process": "P06",
+        "rice": "RICE-R01",
+        "storyKey": "STORY-006",
+        "status": "Passed",
+        "attempt": 2,
+        "executedDaysAgo": 23,
+        "defectId": null
+      },
+      {
+        "id": "TS-043",
+        "name": "Sample script TS-043: recognize revenue",
+        "cycle": "fut_tut",
+        "module": "rm",
+        "process": "P07",
+        "rice": null,
+        "storyKey": "STORY-007",
+        "status": "In Progress",
+        "attempt": 1,
+        "executedDaysAgo": 1,
+        "defectId": null
+      },
+      {
+        "id": "TS-044",
+        "name": "Sample script TS-044: apply receipts and reconcile cash",
+        "cycle": "fut_tut",
+        "module": "cm",
+        "process": "P08",
+        "rice": null,
+        "storyKey": "STORY-008",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 55,
+        "defectId": null
+      },
+      {
+        "id": "TS-045",
+        "name": "Sample script TS-045: manage collections and dunning",
+        "cycle": "fut_tut",
+        "module": "col",
+        "process": "P09",
+        "rice": "RICE-I06",
+        "storyKey": "STORY-009",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 45,
+        "defectId": null
+      },
+      {
+        "id": "TS-046",
+        "name": "Sample script TS-046: convert and reconcile data",
+        "cycle": "fut_tut",
+        "module": "ar",
+        "process": "P10",
+        "rice": null,
+        "storyKey": "STORY-010",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 50,
+        "defectId": null
+      },
+      {
+        "id": "TS-047",
+        "name": "Sample script TS-047: maintain product and pricing setup",
+        "cycle": "fut_tut",
+        "module": "pm",
+        "process": "P01",
+        "rice": null,
+        "storyKey": "STORY-011",
+        "status": "Failed",
+        "attempt": 1,
+        "executedDaysAgo": 23,
+        "defectId": "DEF-005"
+      },
+      {
+        "id": "TS-048",
+        "name": "Sample script TS-048: capture and import orders",
+        "cycle": "fut_tut",
+        "module": "om",
+        "process": "P02",
+        "rice": "RICE-I01",
+        "storyKey": "STORY-012",
+        "status": "Blocked",
+        "attempt": 1,
+        "executedDaysAgo": 32,
+        "defectId": "DEF-009"
+      },
+      {
+        "id": "TS-049",
+        "name": "Sample script TS-049: manage the subscription lifecycle",
+        "cycle": "fut_tut",
+        "module": "sub",
+        "process": "P03",
+        "rice": null,
+        "storyKey": "STORY-013",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 33,
+        "defectId": null
+      },
+      {
+        "id": "TS-050",
+        "name": "Sample script TS-050: calculate us sales and use tax",
+        "cycle": "fut_tut",
+        "module": "vertex",
+        "process": "P04",
+        "rice": null,
+        "storyKey": "STORY-014",
+        "status": "Failed",
+        "attempt": 1,
+        "executedDaysAgo": 27,
+        "defectId": "DEF-006"
+      },
+      {
+        "id": "TS-051",
+        "name": "Sample script TS-051: calculate european vat",
+        "cycle": "fut_tut",
+        "module": "eutax",
+        "process": "P05",
+        "rice": "RICE-E05",
+        "storyKey": "STORY-015",
+        "status": "Not Applicable",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-052",
+        "name": "Sample script TS-052: bill and invoice customers",
+        "cycle": "fut_tut",
+        "module": "ar",
+        "process": "P06",
+        "rice": null,
+        "storyKey": "STORY-016",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 23,
+        "defectId": null
+      },
+      {
+        "id": "TS-053",
+        "name": "Sample script TS-053: recognize revenue",
+        "cycle": "fut_tut",
+        "module": "rm",
+        "process": "P07",
+        "rice": null,
+        "storyKey": "STORY-017",
+        "status": "Failed",
+        "attempt": 1,
+        "executedDaysAgo": 56,
+        "defectId": "DEF-007"
+      },
+      {
+        "id": "TS-054",
+        "name": "Sample script TS-054: apply receipts and reconcile cash",
+        "cycle": "fut_tut",
+        "module": "cm",
+        "process": "P08",
+        "rice": "RICE-I05",
+        "storyKey": "STORY-018",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 26,
+        "defectId": null
+      },
+      {
+        "id": "TS-055",
+        "name": "Sample script TS-055: manage collections and dunning",
+        "cycle": "fut_tut",
+        "module": "col",
+        "process": "P09",
+        "rice": null,
+        "storyKey": "STORY-019",
+        "status": "In Progress",
+        "attempt": 1,
+        "executedDaysAgo": 1,
+        "defectId": null
+      },
+      {
+        "id": "TS-056",
+        "name": "Sample script TS-056: convert and reconcile data",
+        "cycle": "fut_tut",
+        "module": "ar",
+        "process": "P10",
+        "rice": null,
+        "storyKey": "STORY-020",
+        "status": "Passed",
+        "attempt": 2,
+        "executedDaysAgo": 59,
+        "defectId": null
+      },
+      {
+        "id": "TS-057",
+        "name": "Sample script TS-057: maintain product and pricing setup",
+        "cycle": "fut_tut",
+        "module": "pm",
+        "process": "P01",
+        "rice": "RICE-I03",
+        "storyKey": "STORY-021",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 33,
+        "defectId": null
+      },
+      {
+        "id": "TS-058",
+        "name": "Sample script TS-058: capture and import orders",
+        "cycle": "fut_tut",
+        "module": "om",
+        "process": "P02",
+        "rice": null,
+        "storyKey": "STORY-022",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-059",
+        "name": "Sample script TS-059: manage the subscription lifecycle",
+        "cycle": "fut_tut",
+        "module": "sub",
+        "process": "P03",
+        "rice": null,
+        "storyKey": "STORY-023",
+        "status": "Blocked",
+        "attempt": 1,
+        "executedDaysAgo": 59,
+        "defectId": "DEF-010"
+      },
+      {
+        "id": "TS-060",
+        "name": "Sample script TS-060: calculate us sales and use tax",
+        "cycle": "fut_tut",
+        "module": "vertex",
+        "process": "P04",
+        "rice": "RICE-I02",
+        "storyKey": "STORY-024",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 60,
+        "defectId": null
+      },
+      {
+        "id": "TS-061",
+        "name": "Sample script TS-061: calculate european vat",
+        "cycle": "fut_tut",
+        "module": "eutax",
+        "process": "P05",
+        "rice": null,
+        "storyKey": "STORY-025",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 42,
+        "defectId": null
+      },
+      {
+        "id": "TS-062",
+        "name": "Sample script TS-062: bill and invoice customers",
+        "cycle": "fut_tut",
+        "module": "ar",
+        "process": "P06",
+        "rice": null,
+        "storyKey": "STORY-026",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 50,
+        "defectId": null
+      },
+      {
+        "id": "TS-063",
+        "name": "Sample script TS-063: recognize revenue",
+        "cycle": "fut_tut",
+        "module": "rm",
+        "process": "P07",
+        "rice": "RICE-R02",
+        "storyKey": "STORY-027",
+        "status": "Failed",
+        "attempt": 1,
+        "executedDaysAgo": 51,
+        "defectId": null
+      },
+      {
+        "id": "TS-064",
+        "name": "Sample script TS-064: apply receipts and reconcile cash",
+        "cycle": "fut_tut",
+        "module": "cm",
+        "process": "P08",
+        "rice": null,
+        "storyKey": "STORY-028",
+        "status": "In Progress",
+        "attempt": 1,
+        "executedDaysAgo": 1,
+        "defectId": null
+      },
+      {
+        "id": "TS-065",
+        "name": "Sample script TS-065: manage collections and dunning",
+        "cycle": "fut_tut",
+        "module": "col",
+        "process": "P09",
+        "rice": null,
+        "storyKey": "STORY-029",
+        "status": "Not Applicable",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-066",
+        "name": "Sample script TS-066: convert and reconcile data",
+        "cycle": "fut_tut",
+        "module": "ar",
+        "process": "P10",
+        "rice": "RICE-R01",
+        "storyKey": "STORY-030",
+        "status": "In Progress",
+        "attempt": 1,
+        "executedDaysAgo": 1,
+        "defectId": null
+      },
+      {
+        "id": "TS-067",
+        "name": "Sample script TS-067: maintain product and pricing setup",
+        "cycle": "fut_tut",
+        "module": "pm",
+        "process": "P01",
+        "rice": null,
+        "storyKey": "STORY-031",
+        "status": "Passed",
+        "attempt": 2,
+        "executedDaysAgo": 49,
+        "defectId": null
+      },
+      {
+        "id": "TS-068",
+        "name": "Sample script TS-068: capture and import orders",
+        "cycle": "fut_tut",
+        "module": "om",
+        "process": "P02",
+        "rice": null,
+        "storyKey": "STORY-032",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 39,
+        "defectId": null
+      },
+      {
+        "id": "TS-069",
+        "name": "Sample script TS-069: manage the subscription lifecycle",
+        "cycle": "fut_tut",
+        "module": "sub",
+        "process": "P03",
+        "rice": "RICE-R03",
+        "storyKey": "STORY-033",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-070",
+        "name": "Sample script TS-070: calculate us sales and use tax",
+        "cycle": "fut_tut",
+        "module": "vertex",
+        "process": "P04",
+        "rice": null,
+        "storyKey": "STORY-034",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 26,
+        "defectId": null
+      },
+      {
+        "id": "TS-071",
+        "name": "Sample script TS-071: calculate european vat",
+        "cycle": "fut_tut",
+        "module": "eutax",
+        "process": "P05",
+        "rice": null,
+        "storyKey": "STORY-035",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-072",
+        "name": "Sample script TS-072: bill and invoice customers",
+        "cycle": "fut_tut",
+        "module": "ar",
+        "process": "P06",
+        "rice": "RICE-R01",
+        "storyKey": "STORY-036",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 36,
+        "defectId": null
+      },
+      {
+        "id": "TS-073",
+        "name": "Sample script TS-073: maintain product and pricing setup",
+        "cycle": "fut_tut",
+        "module": "pm",
+        "process": "P01",
+        "rice": null,
+        "storyKey": "STORY-001",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 30,
+        "defectId": null
+      },
+      {
+        "id": "TS-074",
+        "name": "Sample script TS-074: capture and import orders",
+        "cycle": "fut_tut",
+        "module": "om",
+        "process": "P02",
+        "rice": null,
+        "storyKey": "STORY-002",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 33,
+        "defectId": null
+      },
+      {
+        "id": "TS-075",
+        "name": "Sample script TS-075: manage the subscription lifecycle",
+        "cycle": "fut_tut",
+        "module": "sub",
+        "process": "P03",
+        "rice": "RICE-R03",
+        "storyKey": "STORY-003",
+        "status": "Passed",
+        "attempt": 2,
+        "executedDaysAgo": 53,
+        "defectId": null
+      },
+      {
+        "id": "TS-076",
+        "name": "Sample script TS-076: calculate us sales and use tax",
+        "cycle": "fut_tut",
+        "module": "vertex",
+        "process": "P04",
+        "rice": null,
+        "storyKey": "STORY-004",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 54,
+        "defectId": null
+      },
+      {
+        "id": "TS-077",
+        "name": "Sample script TS-077: calculate european vat",
+        "cycle": "fut_tut",
+        "module": "eutax",
+        "process": "P05",
+        "rice": null,
+        "storyKey": "STORY-005",
+        "status": "Passed",
+        "attempt": 2,
+        "executedDaysAgo": 53,
+        "defectId": null
+      },
+      {
+        "id": "TS-078",
+        "name": "Sample script TS-078: bill and invoice customers",
+        "cycle": "fut_tut",
+        "module": "ar",
+        "process": "P06",
+        "rice": "RICE-R01",
+        "storyKey": "STORY-006",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 25,
+        "defectId": null
+      },
+      {
+        "id": "TS-079",
+        "name": "Sample script TS-079: recognize revenue",
+        "cycle": "fut_tut",
+        "module": "rm",
+        "process": "P07",
+        "rice": null,
+        "storyKey": "STORY-007",
+        "status": "Failed",
+        "attempt": 1,
+        "executedDaysAgo": 36,
+        "defectId": null
+      },
+      {
+        "id": "TS-080",
+        "name": "Sample script TS-080: apply receipts and reconcile cash",
+        "cycle": "fut_tut",
+        "module": "cm",
+        "process": "P08",
+        "rice": null,
+        "storyKey": "STORY-008",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 30,
+        "defectId": null
+      },
+      {
+        "id": "TS-081",
+        "name": "Sample script TS-081: manage collections and dunning",
+        "cycle": "fut_tut",
+        "module": "col",
+        "process": "P09",
+        "rice": "RICE-I06",
+        "storyKey": "STORY-009",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-082",
+        "name": "Sample script TS-082: convert and reconcile data",
+        "cycle": "fut_tut",
+        "module": "ar",
+        "process": "P10",
+        "rice": null,
+        "storyKey": "STORY-010",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 34,
+        "defectId": null
+      },
+      {
+        "id": "TS-083",
+        "name": "Sample script TS-083: maintain product and pricing setup",
+        "cycle": "fut_tut",
+        "module": "pm",
+        "process": "P01",
+        "rice": null,
+        "storyKey": "STORY-011",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 52,
+        "defectId": null
+      },
+      {
+        "id": "TS-084",
+        "name": "Sample script TS-084: capture and import orders",
+        "cycle": "fut_tut",
+        "module": "om",
+        "process": "P02",
+        "rice": "RICE-I01",
+        "storyKey": "STORY-012",
+        "status": "Blocked",
+        "attempt": 1,
+        "executedDaysAgo": 41,
+        "defectId": "DEF-011"
+      },
+      {
+        "id": "TS-085",
+        "name": "Sample script TS-085: manage the subscription lifecycle",
+        "cycle": "fut_tut",
+        "module": "sub",
+        "process": "P03",
+        "rice": null,
+        "storyKey": "STORY-013",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 59,
+        "defectId": null
+      },
+      {
+        "id": "TS-086",
+        "name": "Sample script TS-086: calculate us sales and use tax",
+        "cycle": "fut_tut",
+        "module": "vertex",
+        "process": "P04",
+        "rice": null,
+        "storyKey": "STORY-014",
+        "status": "Passed",
+        "attempt": 2,
+        "executedDaysAgo": 32,
+        "defectId": null
+      },
+      {
+        "id": "TS-087",
+        "name": "Sample script TS-087: calculate european vat",
+        "cycle": "fut_tut",
+        "module": "eutax",
+        "process": "P05",
+        "rice": "RICE-E05",
+        "storyKey": "STORY-015",
+        "status": "In Progress",
+        "attempt": 1,
+        "executedDaysAgo": 1,
+        "defectId": null
+      },
+      {
+        "id": "TS-088",
+        "name": "Sample script TS-088: bill and invoice customers",
+        "cycle": "fut_tut",
+        "module": "ar",
+        "process": "P06",
+        "rice": null,
+        "storyKey": "STORY-016",
+        "status": "Passed",
+        "attempt": 2,
+        "executedDaysAgo": 45,
+        "defectId": null
+      },
+      {
+        "id": "TS-089",
+        "name": "Sample script TS-089: recognize revenue",
+        "cycle": "fut_tut",
+        "module": "rm",
+        "process": "P07",
+        "rice": null,
+        "storyKey": "STORY-017",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 34,
+        "defectId": null
+      },
+      {
+        "id": "TS-090",
+        "name": "Sample script TS-090: apply receipts and reconcile cash",
+        "cycle": "fut_tut",
+        "module": "cm",
+        "process": "P08",
+        "rice": "RICE-I05",
+        "storyKey": "STORY-018",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 51,
+        "defectId": null
+      },
+      {
+        "id": "TS-101",
+        "name": "Sample script TS-101: maintain product and pricing setup",
+        "cycle": "sit",
+        "module": "pm",
+        "process": "P01",
+        "rice": null,
+        "storyKey": "STORY-001",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 5,
+        "defectId": null
+      },
+      {
+        "id": "TS-102",
+        "name": "Sample script TS-102: capture and import orders",
+        "cycle": "sit",
+        "module": "om",
+        "process": "P02",
+        "rice": null,
+        "storyKey": "STORY-002",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-103",
+        "name": "Sample script TS-103: manage the subscription lifecycle",
+        "cycle": "sit",
+        "module": null,
+        "process": "P03",
+        "rice": "RICE-R03",
+        "storyKey": "STORY-003",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-104",
+        "name": "Sample script TS-104: calculate us sales and use tax",
+        "cycle": "sit",
+        "module": null,
+        "process": "P04",
+        "rice": null,
+        "storyKey": "STORY-004",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-105",
+        "name": "Sample script TS-105: calculate european vat",
+        "cycle": "sit",
+        "module": "eutax",
+        "process": "P05",
+        "rice": null,
+        "storyKey": "STORY-005",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 8,
+        "defectId": null
+      },
+      {
+        "id": "TS-106",
+        "name": "Sample script TS-106: bill and invoice customers",
+        "cycle": "sit",
+        "module": "ar",
+        "process": "P06",
+        "rice": "RICE-R01",
+        "storyKey": "STORY-006",
+        "status": "Passed",
+        "attempt": 2,
+        "executedDaysAgo": 3,
+        "defectId": null
+      },
+      {
+        "id": "TS-107",
+        "name": "Sample script TS-107: recognize revenue",
+        "cycle": "sit",
+        "module": "rm",
+        "process": "P07",
+        "rice": null,
+        "storyKey": "STORY-007",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-108",
+        "name": "Sample script TS-108: apply receipts and reconcile cash",
+        "cycle": "sit",
+        "module": "cm",
+        "process": "P08",
+        "rice": null,
+        "storyKey": "STORY-008",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-109",
+        "name": "Sample script TS-109: manage collections and dunning",
+        "cycle": "sit",
+        "module": "col",
+        "process": "P09",
+        "rice": "RICE-I06",
+        "storyKey": "STORY-009",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 17,
+        "defectId": null
+      },
+      {
+        "id": "TS-110",
+        "name": "Sample script TS-110: convert and reconcile data",
+        "cycle": "sit",
+        "module": "ar",
+        "process": "P10",
+        "rice": null,
+        "storyKey": "STORY-010",
+        "status": "Blocked",
+        "attempt": 1,
+        "executedDaysAgo": 7,
+        "defectId": "DEF-107"
+      },
+      {
+        "id": "TS-111",
+        "name": "Sample script TS-111: maintain product and pricing setup",
+        "cycle": "sit",
+        "module": "pm",
+        "process": "P01",
+        "rice": null,
+        "storyKey": "STORY-011",
+        "status": "In Progress",
+        "attempt": 1,
+        "executedDaysAgo": 1,
+        "defectId": null
+      },
+      {
+        "id": "TS-112",
+        "name": "Sample script TS-112: capture and import orders",
+        "cycle": "sit",
+        "module": "om",
+        "process": "P02",
+        "rice": "RICE-I01",
+        "storyKey": "STORY-012",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 18,
+        "defectId": null
+      },
+      {
+        "id": "TS-113",
+        "name": "Sample script TS-113: manage the subscription lifecycle",
+        "cycle": "sit",
+        "module": "sub",
+        "process": "P03",
+        "rice": null,
+        "storyKey": "STORY-013",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 14,
+        "defectId": null
+      },
+      {
+        "id": "TS-114",
+        "name": "Sample script TS-114: calculate us sales and use tax",
+        "cycle": "sit",
+        "module": "vertex",
+        "process": "P04",
+        "rice": null,
+        "storyKey": "STORY-014",
+        "status": "Failed",
+        "attempt": 1,
+        "executedDaysAgo": 7,
+        "defectId": "DEF-101"
+      },
+      {
+        "id": "TS-115",
+        "name": "Sample script TS-115: calculate european vat",
+        "cycle": "sit",
+        "module": "eutax",
+        "process": "P05",
+        "rice": "RICE-E05",
+        "storyKey": "STORY-015",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 6,
+        "defectId": null
+      },
+      {
+        "id": "TS-116",
+        "name": "Sample script TS-116: bill and invoice customers",
+        "cycle": "sit",
+        "module": "ar",
+        "process": "P06",
+        "rice": null,
+        "storyKey": "STORY-016",
+        "status": "In Progress",
+        "attempt": 1,
+        "executedDaysAgo": 1,
+        "defectId": null
+      },
+      {
+        "id": "TS-117",
+        "name": "Sample script TS-117: recognize revenue",
+        "cycle": "sit",
+        "module": "rm",
+        "process": "P07",
+        "rice": null,
+        "storyKey": "STORY-017",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 7,
+        "defectId": null
+      },
+      {
+        "id": "TS-118",
+        "name": "Sample script TS-118: apply receipts and reconcile cash",
+        "cycle": "sit",
+        "module": "cm",
+        "process": "P08",
+        "rice": "RICE-I05",
+        "storyKey": "STORY-018",
+        "status": "Failed",
+        "attempt": 1,
+        "executedDaysAgo": 9,
+        "defectId": "DEF-102"
+      },
+      {
+        "id": "TS-119",
+        "name": "Sample script TS-119: manage collections and dunning",
+        "cycle": "sit",
+        "module": "col",
+        "process": "P09",
+        "rice": null,
+        "storyKey": "STORY-019",
+        "status": "Failed",
+        "attempt": 2,
+        "executedDaysAgo": 9,
+        "defectId": "DEF-103"
+      },
+      {
+        "id": "TS-120",
+        "name": "Sample script TS-120: convert and reconcile data",
+        "cycle": "sit",
+        "module": "ar",
+        "process": "P10",
+        "rice": null,
+        "storyKey": "STORY-020",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 9,
+        "defectId": null
+      },
+      {
+        "id": "TS-121",
+        "name": "Sample script TS-121: maintain product and pricing setup",
+        "cycle": "sit",
+        "module": "pm",
+        "process": "P01",
+        "rice": "RICE-I03",
+        "storyKey": "STORY-021",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 10,
+        "defectId": null
+      },
+      {
+        "id": "TS-122",
+        "name": "Sample script TS-122: capture and import orders",
+        "cycle": "sit",
+        "module": "om",
+        "process": "P02",
+        "rice": null,
+        "storyKey": "STORY-022",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 13,
+        "defectId": null
+      },
+      {
+        "id": "TS-123",
+        "name": "Sample script TS-123: manage the subscription lifecycle",
+        "cycle": "sit",
+        "module": "sub",
+        "process": "P03",
+        "rice": null,
+        "storyKey": "STORY-023",
+        "status": "Failed",
+        "attempt": 1,
+        "executedDaysAgo": 16,
+        "defectId": "DEF-104"
+      },
+      {
+        "id": "TS-124",
+        "name": "Sample script TS-124: calculate us sales and use tax",
+        "cycle": "sit",
+        "module": "vertex",
+        "process": "P04",
+        "rice": "RICE-I02",
+        "storyKey": "STORY-024",
+        "status": "Passed",
+        "attempt": 2,
+        "executedDaysAgo": 4,
+        "defectId": null
+      },
+      {
+        "id": "TS-125",
+        "name": "Sample script TS-125: calculate european vat",
+        "cycle": "sit",
+        "module": "eutax",
+        "process": "P05",
+        "rice": null,
+        "storyKey": "STORY-025",
+        "status": "Passed",
+        "attempt": 2,
+        "executedDaysAgo": 14,
+        "defectId": null
+      },
+      {
+        "id": "TS-126",
+        "name": "Sample script TS-126: bill and invoice customers",
+        "cycle": "sit",
+        "module": "ar",
+        "process": "P06",
+        "rice": null,
+        "storyKey": "STORY-026",
+        "status": "Passed",
+        "attempt": 2,
+        "executedDaysAgo": 19,
+        "defectId": null
+      },
+      {
+        "id": "TS-127",
+        "name": "Sample script TS-127: recognize revenue",
+        "cycle": "sit",
+        "module": "rm",
+        "process": "P07",
+        "rice": "RICE-R02",
+        "storyKey": "STORY-027",
+        "status": "Blocked",
+        "attempt": 1,
+        "executedDaysAgo": 16,
+        "defectId": "DEF-108"
+      },
+      {
+        "id": "TS-128",
+        "name": "Sample script TS-128: apply receipts and reconcile cash",
+        "cycle": "sit",
+        "module": "cm",
+        "process": "P08",
+        "rice": null,
+        "storyKey": "STORY-028",
+        "status": "Passed",
+        "attempt": 2,
+        "executedDaysAgo": 19,
+        "defectId": null
+      },
+      {
+        "id": "TS-129",
+        "name": "Sample script TS-129: maintain product and pricing setup",
+        "cycle": "sit",
+        "module": "pm",
+        "process": "P01",
+        "rice": null,
+        "storyKey": "STORY-001",
+        "status": "Failed",
+        "attempt": 1,
+        "executedDaysAgo": 7,
+        "defectId": "DEF-105"
+      },
+      {
+        "id": "TS-130",
+        "name": "Sample script TS-130: capture and import orders",
+        "cycle": "sit",
+        "module": "om",
+        "process": "P02",
+        "rice": null,
+        "storyKey": "STORY-002",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-131",
+        "name": "Sample script TS-131: manage the subscription lifecycle",
+        "cycle": "sit",
+        "module": "sub",
+        "process": "P03",
+        "rice": "RICE-R03",
+        "storyKey": "STORY-003",
+        "status": "Blocked",
+        "attempt": 1,
+        "executedDaysAgo": 19,
+        "defectId": "DEF-109"
+      },
+      {
+        "id": "TS-132",
+        "name": "Sample script TS-132: calculate us sales and use tax",
+        "cycle": "sit",
+        "module": "vertex",
+        "process": "P04",
+        "rice": null,
+        "storyKey": "STORY-004",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-133",
+        "name": "Sample script TS-133: calculate european vat",
+        "cycle": "sit",
+        "module": "eutax",
+        "process": "P05",
+        "rice": null,
+        "storyKey": "STORY-005",
+        "status": "Not Applicable",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-134",
+        "name": "Sample script TS-134: bill and invoice customers",
+        "cycle": "sit",
+        "module": "ar",
+        "process": "P06",
+        "rice": "RICE-R01",
+        "storyKey": "STORY-006",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 17,
+        "defectId": null
+      },
+      {
+        "id": "TS-135",
+        "name": "Sample script TS-135: recognize revenue",
+        "cycle": "sit",
+        "module": "rm",
+        "process": "P07",
+        "rice": null,
+        "storyKey": "STORY-007",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 3,
+        "defectId": null
+      },
+      {
+        "id": "TS-136",
+        "name": "Sample script TS-136: apply receipts and reconcile cash",
+        "cycle": "sit",
+        "module": "cm",
+        "process": "P08",
+        "rice": null,
+        "storyKey": "STORY-008",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-137",
+        "name": "Sample script TS-137: manage collections and dunning",
+        "cycle": "sit",
+        "module": "col",
+        "process": "P09",
+        "rice": "RICE-I06",
+        "storyKey": "STORY-009",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 7,
+        "defectId": null
+      },
+      {
+        "id": "TS-138",
+        "name": "Sample script TS-138: convert and reconcile data",
+        "cycle": "sit",
+        "module": "ar",
+        "process": "P10",
+        "rice": null,
+        "storyKey": "STORY-010",
+        "status": "In Progress",
+        "attempt": 1,
+        "executedDaysAgo": 1,
+        "defectId": null
+      },
+      {
+        "id": "TS-139",
+        "name": "Sample script TS-139: maintain product and pricing setup",
+        "cycle": "sit",
+        "module": "pm",
+        "process": "P01",
+        "rice": null,
+        "storyKey": "STORY-011",
+        "status": "Passed",
+        "attempt": 1,
+        "executedDaysAgo": 18,
+        "defectId": null
+      },
+      {
+        "id": "TS-140",
+        "name": "Sample script TS-140: capture and import orders",
+        "cycle": "sit",
+        "module": "om",
+        "process": "P02",
+        "rice": "RICE-I01",
+        "storyKey": "STORY-012",
+        "status": "Failed",
+        "attempt": 1,
+        "executedDaysAgo": 6,
+        "defectId": "DEF-106"
+      },
+      {
+        "id": "TS-201",
+        "name": "Sample script TS-201: maintain product and pricing setup",
+        "cycle": "uat",
+        "module": "pm",
+        "process": "P01",
+        "rice": null,
+        "storyKey": "STORY-001",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-202",
+        "name": "Sample script TS-202: capture and import orders",
+        "cycle": "uat",
+        "module": "om",
+        "process": "P02",
+        "rice": null,
+        "storyKey": "STORY-002",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-203",
+        "name": "Sample script TS-203: manage the subscription lifecycle",
+        "cycle": "uat",
+        "module": "sub",
+        "process": "P03",
+        "rice": "RICE-R03",
+        "storyKey": "STORY-003",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-204",
+        "name": "Sample script TS-204: calculate us sales and use tax",
+        "cycle": "uat",
+        "module": "vertex",
+        "process": "P04",
+        "rice": null,
+        "storyKey": "STORY-004",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-205",
+        "name": "Sample script TS-205: calculate european vat",
+        "cycle": "uat",
+        "module": "eutax",
+        "process": "P05",
+        "rice": null,
+        "storyKey": "STORY-005",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-206",
+        "name": "Sample script TS-206: bill and invoice customers",
+        "cycle": "uat",
+        "module": "ar",
+        "process": "P06",
+        "rice": "RICE-R01",
+        "storyKey": "STORY-006",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-207",
+        "name": "Sample script TS-207: recognize revenue",
+        "cycle": "uat",
+        "module": "rm",
+        "process": "P07",
+        "rice": null,
+        "storyKey": "STORY-007",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-208",
+        "name": "Sample script TS-208: apply receipts and reconcile cash",
+        "cycle": "uat",
+        "module": "cm",
+        "process": "P08",
+        "rice": null,
+        "storyKey": "STORY-008",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-209",
+        "name": "Sample script TS-209: manage collections and dunning",
+        "cycle": "uat",
+        "module": "col",
+        "process": "P09",
+        "rice": "RICE-I06",
+        "storyKey": "STORY-009",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-210",
+        "name": "Sample script TS-210: convert and reconcile data",
+        "cycle": "uat",
+        "module": "ar",
+        "process": "P10",
+        "rice": null,
+        "storyKey": "STORY-010",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-211",
+        "name": "Sample script TS-211: maintain product and pricing setup",
+        "cycle": "uat",
+        "module": "pm",
+        "process": "P01",
+        "rice": null,
+        "storyKey": "STORY-011",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-212",
+        "name": "Sample script TS-212: capture and import orders",
+        "cycle": "uat",
+        "module": "om",
+        "process": "P02",
+        "rice": "RICE-I01",
+        "storyKey": "STORY-012",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-213",
+        "name": "Sample script TS-213: manage the subscription lifecycle",
+        "cycle": "uat",
+        "module": "sub",
+        "process": "P03",
+        "rice": null,
+        "storyKey": "STORY-013",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-214",
+        "name": "Sample script TS-214: calculate us sales and use tax",
+        "cycle": "uat",
+        "module": "vertex",
+        "process": "P04",
+        "rice": null,
+        "storyKey": "STORY-014",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-215",
+        "name": "Sample script TS-215: calculate european vat",
+        "cycle": "uat",
+        "module": "eutax",
+        "process": "P05",
+        "rice": "RICE-E05",
+        "storyKey": "STORY-015",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-216",
+        "name": "Sample script TS-216: bill and invoice customers",
+        "cycle": "uat",
+        "module": "ar",
+        "process": "P06",
+        "rice": null,
+        "storyKey": "STORY-016",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-217",
+        "name": "Sample script TS-217: recognize revenue",
+        "cycle": "uat",
+        "module": "rm",
+        "process": "P07",
+        "rice": null,
+        "storyKey": "STORY-017",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-218",
+        "name": "Sample script TS-218: apply receipts and reconcile cash",
+        "cycle": "uat",
+        "module": "cm",
+        "process": "P08",
+        "rice": "RICE-I05",
+        "storyKey": "STORY-018",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-219",
+        "name": "Sample script TS-219: manage collections and dunning",
+        "cycle": "uat",
+        "module": "col",
+        "process": "P09",
+        "rice": null,
+        "storyKey": "STORY-019",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-220",
+        "name": "Sample script TS-220: convert and reconcile data",
+        "cycle": "uat",
+        "module": "ar",
+        "process": "P10",
+        "rice": null,
+        "storyKey": "STORY-020",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-221",
+        "name": "Sample script TS-221: maintain product and pricing setup",
+        "cycle": "uat",
+        "module": "pm",
+        "process": "P01",
+        "rice": "RICE-I03",
+        "storyKey": "STORY-021",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-222",
+        "name": "Sample script TS-222: capture and import orders",
+        "cycle": "uat",
+        "module": "om",
+        "process": "P02",
+        "rice": null,
+        "storyKey": "STORY-022",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-223",
+        "name": "Sample script TS-223: manage the subscription lifecycle",
+        "cycle": "uat",
+        "module": "sub",
+        "process": "P03",
+        "rice": null,
+        "storyKey": "STORY-023",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      },
+      {
+        "id": "TS-224",
+        "name": "Sample script TS-224: calculate us sales and use tax",
+        "cycle": "uat",
+        "module": "vertex",
+        "process": "P04",
+        "rice": "RICE-I02",
+        "storyKey": "STORY-024",
+        "status": "Not Run",
+        "attempt": null,
+        "executedDaysAgo": null,
+        "defectId": null
+      }
+    ],
+    "defects": [
+      {
+        "id": "DEF-001",
+        "summary": "Sample defect DEF-001: unexpected result during FUT/TUT testing",
+        "status": "Closed",
+        "severity": "Medium",
+        "priority": "P3",
+        "cycle": "fut_tut",
+        "module": "ar",
+        "process": "P06",
+        "rice": null,
+        "storyKey": "STORY-016",
+        "testId": "TS-016",
+        "createdDaysAgo": 35,
+        "resolvedDaysAgo": 29,
+        "escapedFrom": null
+      },
+      {
+        "id": "DEF-002",
+        "summary": "Sample defect DEF-002: unexpected result during FUT/TUT testing",
+        "status": "Closed",
+        "severity": "Medium",
+        "priority": "P3",
+        "cycle": "fut_tut",
+        "module": "om",
+        "process": "P02",
+        "rice": null,
+        "storyKey": "STORY-022",
+        "testId": "TS-022",
+        "createdDaysAgo": 41,
+        "resolvedDaysAgo": 40,
+        "escapedFrom": null
+      },
+      {
+        "id": "DEF-003",
+        "summary": "Sample defect DEF-003: unexpected result during FUT/TUT testing",
+        "status": "Closed",
+        "severity": "High",
+        "priority": "P2",
+        "cycle": "fut_tut",
+        "module": "rm",
+        "process": "P07",
+        "rice": "RICE-R02",
+        "storyKey": "STORY-027",
+        "testId": "TS-027",
+        "createdDaysAgo": 31,
+        "resolvedDaysAgo": 25,
+        "escapedFrom": null
+      },
+      {
+        "id": "DEF-004",
+        "summary": "Sample defect DEF-004: unexpected result during FUT/TUT testing",
+        "status": "Closed",
+        "severity": "Low",
+        "priority": "P4",
+        "cycle": "fut_tut",
+        "module": "col",
+        "process": "P09",
+        "rice": null,
+        "storyKey": null,
+        "testId": "TS-029",
+        "createdDaysAgo": 45,
+        "resolvedDaysAgo": 43,
+        "escapedFrom": null
+      },
+      {
+        "id": "DEF-005",
+        "summary": "Sample defect DEF-005: unexpected result during FUT/TUT testing",
+        "status": "Resolved",
+        "severity": "Medium",
+        "priority": "P3",
+        "cycle": "fut_tut",
+        "module": "pm",
+        "process": "P01",
+        "rice": null,
+        "storyKey": null,
+        "testId": "TS-047",
+        "createdDaysAgo": 38,
+        "resolvedDaysAgo": 36,
+        "escapedFrom": null
+      },
+      {
+        "id": "DEF-006",
+        "summary": "Sample defect DEF-006: unexpected result during FUT/TUT testing",
+        "status": "Closed",
+        "severity": "High",
+        "priority": "P2",
+        "cycle": "fut_tut",
+        "module": "vertex",
+        "process": "P04",
+        "rice": null,
+        "storyKey": "STORY-014",
+        "testId": "TS-050",
+        "createdDaysAgo": 51,
+        "resolvedDaysAgo": 49,
+        "escapedFrom": null
+      },
+      {
+        "id": "DEF-007",
+        "summary": "Sample defect DEF-007: unexpected result during FUT/TUT testing",
+        "status": "In Progress",
+        "severity": "Medium",
+        "priority": "P3",
+        "cycle": "fut_tut",
+        "module": "rm",
+        "process": "P07",
+        "rice": null,
+        "storyKey": "STORY-017",
+        "testId": "TS-053",
+        "createdDaysAgo": 28,
+        "resolvedDaysAgo": null,
+        "escapedFrom": null
+      },
+      {
+        "id": "DEF-008",
+        "summary": "Sample defect DEF-008: unexpected result during FUT/TUT testing",
+        "status": "Open",
+        "severity": "Low",
+        "priority": "P4",
+        "cycle": "fut_tut",
+        "module": "cm",
+        "process": "P08",
+        "rice": "RICE-I05",
+        "storyKey": "STORY-018",
+        "testId": "TS-018",
+        "createdDaysAgo": 47,
+        "resolvedDaysAgo": null,
+        "escapedFrom": null
+      },
+      {
+        "id": "DEF-009",
+        "summary": "Sample defect DEF-009: unexpected result during FUT/TUT testing",
+        "status": "Open",
+        "severity": "Medium",
+        "priority": "P3",
+        "cycle": "fut_tut",
+        "module": "om",
+        "process": "P02",
+        "rice": "RICE-I01",
+        "storyKey": "STORY-012",
+        "testId": "TS-048",
+        "createdDaysAgo": 53,
+        "resolvedDaysAgo": null,
+        "escapedFrom": null
+      },
+      {
+        "id": "DEF-010",
+        "summary": "Sample defect DEF-010: unexpected result during FUT/TUT testing",
+        "status": "Resolved",
+        "severity": "Low",
+        "priority": "P4",
+        "cycle": "fut_tut",
+        "module": "sub",
+        "process": "P03",
+        "rice": null,
+        "storyKey": "STORY-023",
+        "testId": "TS-059",
+        "createdDaysAgo": 32,
+        "resolvedDaysAgo": 26,
+        "escapedFrom": null
+      },
+      {
+        "id": "DEF-011",
+        "summary": "Sample defect DEF-011: unexpected result during FUT/TUT testing",
+        "status": "Closed",
+        "severity": "Medium",
+        "priority": "P3",
+        "cycle": "fut_tut",
+        "module": "om",
+        "process": "P02",
+        "rice": "RICE-I01",
+        "storyKey": "STORY-012",
+        "testId": "TS-084",
+        "createdDaysAgo": 36,
+        "resolvedDaysAgo": 34,
+        "escapedFrom": null
+      },
+      {
+        "id": "DEF-012",
+        "summary": "Sample defect DEF-012: unexpected result during FUT/TUT testing",
+        "status": "Reopened",
+        "severity": "Low",
+        "priority": "P4",
+        "cycle": "fut_tut",
+        "module": "ar",
+        "process": "P06",
+        "rice": null,
+        "storyKey": null,
+        "testId": null,
+        "createdDaysAgo": 49,
+        "resolvedDaysAgo": null,
+        "escapedFrom": null
+      },
+      {
+        "id": "DEF-101",
+        "summary": "Sample defect DEF-101: unexpected result during SIT testing",
+        "status": "Reopened",
+        "severity": "Medium",
+        "priority": "P3",
+        "cycle": "sit",
+        "module": "vertex",
+        "process": "P04",
+        "rice": null,
+        "storyKey": "STORY-014",
+        "testId": "TS-114",
+        "createdDaysAgo": 4,
+        "resolvedDaysAgo": null,
+        "escapedFrom": "fut_tut"
+      },
+      {
+        "id": "DEF-102",
+        "summary": "Sample defect DEF-102: unexpected result during SIT testing",
+        "status": "In Progress",
+        "severity": "High",
+        "priority": "P2",
+        "cycle": "sit",
+        "module": "cm",
+        "process": "P08",
+        "rice": "RICE-I05",
+        "storyKey": "STORY-018",
+        "testId": "TS-118",
+        "createdDaysAgo": 5,
+        "resolvedDaysAgo": null,
+        "escapedFrom": "fut_tut"
+      },
+      {
+        "id": "DEF-103",
+        "summary": "Sample defect DEF-103: unexpected result during SIT testing",
+        "status": "Closed",
+        "severity": "High",
+        "priority": "P2",
+        "cycle": "sit",
+        "module": "col",
+        "process": "P09",
+        "rice": null,
+        "storyKey": "STORY-019",
+        "testId": "TS-119",
+        "createdDaysAgo": 9,
+        "resolvedDaysAgo": 8,
+        "escapedFrom": "fut_tut"
+      },
+      {
+        "id": "DEF-104",
+        "summary": "Sample defect DEF-104: unexpected result during SIT testing",
+        "status": "Open",
+        "severity": "Medium",
+        "priority": "P3",
+        "cycle": "sit",
+        "module": "sub",
+        "process": "P03",
+        "rice": null,
+        "storyKey": "STORY-023",
+        "testId": "TS-123",
+        "createdDaysAgo": 4,
+        "resolvedDaysAgo": null,
+        "escapedFrom": null
+      },
+      {
+        "id": "DEF-105",
+        "summary": "Sample defect DEF-105: unexpected result during SIT testing",
+        "status": "Resolved",
+        "severity": "Low",
+        "priority": "P4",
+        "cycle": "sit",
+        "module": "pm",
+        "process": "P01",
+        "rice": null,
+        "storyKey": "STORY-001",
+        "testId": "TS-129",
+        "createdDaysAgo": 10,
+        "resolvedDaysAgo": 7,
+        "escapedFrom": null
+      },
+      {
+        "id": "DEF-106",
+        "summary": "Sample defect DEF-106: unexpected result during SIT testing",
+        "status": "Closed",
+        "severity": "Low",
+        "priority": "P4",
+        "cycle": "sit",
+        "module": "om",
+        "process": "P02",
+        "rice": "RICE-I01",
+        "storyKey": "STORY-012",
+        "testId": "TS-140",
+        "createdDaysAgo": 3,
+        "resolvedDaysAgo": 1,
+        "escapedFrom": null
+      },
+      {
+        "id": "DEF-107",
+        "summary": "Sample defect DEF-107: unexpected result during SIT testing",
+        "status": "Open",
+        "severity": "High",
+        "priority": "P1",
+        "cycle": "sit",
+        "module": "ar",
+        "process": "P10",
+        "rice": null,
+        "storyKey": "STORY-010",
+        "testId": "TS-110",
+        "createdDaysAgo": 10,
+        "resolvedDaysAgo": null,
+        "escapedFrom": null
+      },
+      {
+        "id": "DEF-108",
+        "summary": "Sample defect DEF-108: unexpected result during SIT testing",
+        "status": "Open",
+        "severity": "Medium",
+        "priority": "P3",
+        "cycle": "sit",
+        "module": "rm",
+        "process": "P07",
+        "rice": "RICE-R02",
+        "storyKey": "STORY-027",
+        "testId": "TS-127",
+        "createdDaysAgo": 6,
+        "resolvedDaysAgo": null,
+        "escapedFrom": null
+      },
+      {
+        "id": "DEF-109",
+        "summary": "Sample defect DEF-109: unexpected result during SIT testing",
+        "status": "In Progress",
+        "severity": "Medium",
+        "priority": "P3",
+        "cycle": "sit",
+        "module": "sub",
+        "process": "P03",
+        "rice": "RICE-R03",
+        "storyKey": "STORY-003",
+        "testId": "TS-131",
+        "createdDaysAgo": 15,
+        "resolvedDaysAgo": null,
+        "escapedFrom": null
+      },
+      {
+        "id": "DEF-110",
+        "summary": "Sample defect DEF-110: unexpected result during SIT testing",
+        "status": "In Progress",
+        "severity": "Critical",
+        "priority": "P1",
+        "cycle": "sit",
+        "module": "ar",
+        "process": "P06",
+        "rice": null,
+        "storyKey": null,
+        "testId": null,
+        "createdDaysAgo": 10,
+        "resolvedDaysAgo": null,
+        "escapedFrom": null
+      }
+    ],
+    "stories": [
+      {
+        "key": "STORY-001",
+        "summary": "Sample story 1: maintain product and pricing setup",
+        "module": "pm",
+        "process": "P01",
+        "rice": null
+      },
+      {
+        "key": "STORY-002",
+        "summary": "Sample story 2: capture and import orders",
+        "module": "om",
+        "process": "P02",
+        "rice": null
+      },
+      {
+        "key": "STORY-003",
+        "summary": "Sample story 3: manage the subscription lifecycle",
+        "module": "sub",
+        "process": "P03",
+        "rice": "RICE-R03"
+      },
+      {
+        "key": "STORY-004",
+        "summary": "Sample story 4: calculate us sales and use tax",
+        "module": "vertex",
+        "process": "P04",
+        "rice": null
+      },
+      {
+        "key": "STORY-005",
+        "summary": "Sample story 5: calculate european vat",
+        "module": "eutax",
+        "process": "P05",
+        "rice": null
+      },
+      {
+        "key": "STORY-006",
+        "summary": "Sample story 6: bill and invoice customers",
+        "module": "ar",
+        "process": "P06",
+        "rice": "RICE-R01"
+      },
+      {
+        "key": "STORY-007",
+        "summary": "Sample story 7: recognize revenue",
+        "module": "rm",
+        "process": "P07",
+        "rice": null
+      },
+      {
+        "key": "STORY-008",
+        "summary": "Sample story 8: apply receipts and reconcile cash",
+        "module": "cm",
+        "process": "P08",
+        "rice": null
+      },
+      {
+        "key": "STORY-009",
+        "summary": "Sample story 9: manage collections and dunning",
+        "module": "col",
+        "process": "P09",
+        "rice": "RICE-I06"
+      },
+      {
+        "key": "STORY-010",
+        "summary": "Sample story 10: convert and reconcile data",
+        "module": "ar",
+        "process": "P10",
+        "rice": null
+      },
+      {
+        "key": "STORY-011",
+        "summary": "Sample story 11: maintain product and pricing setup",
+        "module": "pm",
+        "process": "P01",
+        "rice": null
+      },
+      {
+        "key": "STORY-012",
+        "summary": "Sample story 12: capture and import orders",
+        "module": "om",
+        "process": "P02",
+        "rice": "RICE-I01"
+      },
+      {
+        "key": "STORY-013",
+        "summary": "Sample story 13: manage the subscription lifecycle",
+        "module": "sub",
+        "process": "P03",
+        "rice": null
+      },
+      {
+        "key": "STORY-014",
+        "summary": "Sample story 14: calculate us sales and use tax",
+        "module": "vertex",
+        "process": "P04",
+        "rice": null
+      },
+      {
+        "key": "STORY-015",
+        "summary": "Sample story 15: calculate european vat",
+        "module": "eutax",
+        "process": "P05",
+        "rice": "RICE-E05"
+      },
+      {
+        "key": "STORY-016",
+        "summary": "Sample story 16: bill and invoice customers",
+        "module": "ar",
+        "process": "P06",
+        "rice": null
+      },
+      {
+        "key": "STORY-017",
+        "summary": "Sample story 17: recognize revenue",
+        "module": "rm",
+        "process": "P07",
+        "rice": null
+      },
+      {
+        "key": "STORY-018",
+        "summary": "Sample story 18: apply receipts and reconcile cash",
+        "module": "cm",
+        "process": "P08",
+        "rice": "RICE-I05"
+      },
+      {
+        "key": "STORY-019",
+        "summary": "Sample story 19: manage collections and dunning",
+        "module": "col",
+        "process": "P09",
+        "rice": null
+      },
+      {
+        "key": "STORY-020",
+        "summary": "Sample story 20: convert and reconcile data",
+        "module": "ar",
+        "process": "P10",
+        "rice": null
+      },
+      {
+        "key": "STORY-021",
+        "summary": "Sample story 21: maintain product and pricing setup",
+        "module": "pm",
+        "process": "P01",
+        "rice": "RICE-I03"
+      },
+      {
+        "key": "STORY-022",
+        "summary": "Sample story 22: capture and import orders",
+        "module": "om",
+        "process": "P02",
+        "rice": null
+      },
+      {
+        "key": "STORY-023",
+        "summary": "Sample story 23: manage the subscription lifecycle",
+        "module": "sub",
+        "process": "P03",
+        "rice": null
+      },
+      {
+        "key": "STORY-024",
+        "summary": "Sample story 24: calculate us sales and use tax",
+        "module": "vertex",
+        "process": "P04",
+        "rice": "RICE-I02"
+      },
+      {
+        "key": "STORY-025",
+        "summary": "Sample story 25: calculate european vat",
+        "module": "eutax",
+        "process": "P05",
+        "rice": null
+      },
+      {
+        "key": "STORY-026",
+        "summary": "Sample story 26: bill and invoice customers",
+        "module": "ar",
+        "process": "P06",
+        "rice": null
+      },
+      {
+        "key": "STORY-027",
+        "summary": "Sample story 27: recognize revenue",
+        "module": "rm",
+        "process": "P07",
+        "rice": "RICE-R02"
+      },
+      {
+        "key": "STORY-028",
+        "summary": "Sample story 28: apply receipts and reconcile cash",
+        "module": "cm",
+        "process": "P08",
+        "rice": null
+      },
+      {
+        "key": "STORY-029",
+        "summary": "Sample story 29: manage collections and dunning",
+        "module": "col",
+        "process": "P09",
+        "rice": null
+      },
+      {
+        "key": "STORY-030",
+        "summary": "Sample story 30: convert and reconcile data",
+        "module": "ar",
+        "process": "P10",
+        "rice": "RICE-R01"
+      },
+      {
+        "key": "STORY-031",
+        "summary": "Sample story 31: maintain product and pricing setup",
+        "module": "pm",
+        "process": "P01",
+        "rice": null
+      },
+      {
+        "key": "STORY-032",
+        "summary": "Sample story 32: capture and import orders",
+        "module": "om",
+        "process": "P02",
+        "rice": null
+      },
+      {
+        "key": "STORY-033",
+        "summary": "Sample story 33: manage the subscription lifecycle",
+        "module": "sub",
+        "process": "P03",
+        "rice": "RICE-R03"
+      },
+      {
+        "key": "STORY-034",
+        "summary": "Sample story 34: calculate us sales and use tax",
+        "module": "vertex",
+        "process": "P04",
+        "rice": null
+      },
+      {
+        "key": "STORY-035",
+        "summary": "Sample story 35: calculate european vat",
+        "module": "eutax",
+        "process": "P05",
+        "rice": null
+      },
+      {
+        "key": "STORY-036",
+        "summary": "Sample story 36: bill and invoice customers",
+        "module": "ar",
+        "process": "P06",
+        "rice": "RICE-R01"
+      },
+      {
+        "key": "STORY-037",
+        "summary": "Sample story 37: recognize revenue",
+        "module": "rm",
+        "process": "P07",
+        "rice": null
+      },
+      {
+        "key": "STORY-038",
+        "summary": "Sample story 38: apply receipts and reconcile cash",
+        "module": "cm",
+        "process": "P08",
+        "rice": null
+      },
+      {
+        "key": "STORY-039",
+        "summary": "Sample story 39: manage collections and dunning",
+        "module": "col",
+        "process": "P09",
+        "rice": "RICE-I06"
+      },
+      {
+        "key": "STORY-040",
+        "summary": "Sample story 40: convert and reconcile data",
+        "module": "ar",
+        "process": "P10",
+        "rice": null
+      }
+    ]
+  }
+}

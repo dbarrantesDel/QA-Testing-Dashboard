@@ -1,0 +1,23 @@
+Issue key,Summary,Status,Priority,Severity,Test Cycle,Module,Business Process,RICE ID,Linked Story,Test Script ID,Created,Resolved,Escaped From
+DEF-001,Sample defect DEF-001: unexpected result during FUT/TUT testing,Done,P3,Medium,FUT/TUT,Accounts Receivable,Bill and invoice customers,,STORY-016,TS-016,11/Sep/26 9:30 AM,17/Sep/26 9:30 AM,
+DEF-002,Sample defect DEF-002: unexpected result during FUT/TUT testing,Done,P3,Medium,FUT/TUT,Order Management,Capture and import orders,,STORY-022,TS-022,05/Sep/26 9:30 AM,06/Sep/26 9:30 AM,
+DEF-003,Sample defect DEF-003: unexpected result during FUT/TUT testing,Done,P2,High,FUT/TUT,Revenue Management,Recognize revenue,RICE-R02,STORY-027,TS-027,15/Sep/26 9:30 AM,21/Sep/26 9:30 AM,
+DEF-004,Sample defect DEF-004: unexpected result during FUT/TUT testing,Done,P4,Low,FUT/TUT,Collections,Manage collections and dunning,,,TS-029,01/Sep/26 9:30 AM,03/Sep/26 9:30 AM,
+DEF-005,Sample defect DEF-005: unexpected result during FUT/TUT testing,Ready for retest,P3,Medium,FUT/TUT,Product Management,Maintain product and pricing setup,,,TS-047,08/Sep/26 9:30 AM,10/Sep/26 9:30 AM,
+DEF-006,Sample defect DEF-006: unexpected result during FUT/TUT testing,Done,P2,High,FUT/TUT,Vertex integration (US B2B sales/use tax),Calculate US sales and use tax,,STORY-014,TS-050,26/Aug/26 9:30 AM,28/Aug/26 9:30 AM,
+DEF-007,Sample defect DEF-007: unexpected result during FUT/TUT testing,In Progress,P3,Medium,FUT/TUT,Revenue Management,Recognize revenue,,STORY-017,TS-053,18/Sep/26 9:30 AM,,
+DEF-008,Sample defect DEF-008: unexpected result during FUT/TUT testing,To Do,P4,Low,FUT/TUT,Cash Management,Apply receipts and reconcile cash,RICE-I05,STORY-018,TS-018,30/Aug/26 9:30 AM,,
+DEF-009,Sample defect DEF-009: unexpected result during FUT/TUT testing,To Do,P3,Medium,FUT/TUT,Order Management,Capture and import orders,RICE-I01,STORY-012,TS-048,24/Aug/26 9:30 AM,,
+DEF-010,Sample defect DEF-010: unexpected result during FUT/TUT testing,Ready for retest,P4,Low,FUT/TUT,Subscription Management,Manage the subscription lifecycle,,STORY-023,TS-059,14/Sep/26 9:30 AM,20/Sep/26 9:30 AM,
+DEF-011,Sample defect DEF-011: unexpected result during FUT/TUT testing,Done,P3,Medium,FUT/TUT,Order Management,Capture and import orders,RICE-I01,STORY-012,TS-084,10/Sep/26 9:30 AM,12/Sep/26 9:30 AM,
+DEF-012,Sample defect DEF-012: unexpected result during FUT/TUT testing,Reopened,P4,Low,FUT/TUT,Accounts Receivable,Bill and invoice customers,,,,28/Aug/26 9:30 AM,,
+DEF-101,Sample defect DEF-101: unexpected result during SIT testing,Reopened,P3,Medium,SIT,Vertex integration (US B2B sales/use tax),Calculate US sales and use tax,,STORY-014,TS-114,12/Oct/26 9:30 AM,,FUT/TUT
+DEF-102,Sample defect DEF-102: unexpected result during SIT testing,In Progress,P2,High,SIT,Cash Management,Apply receipts and reconcile cash,RICE-I05,STORY-018,TS-118,11/Oct/26 9:30 AM,,FUT/TUT
+DEF-103,Sample defect DEF-103: unexpected result during SIT testing,Done,P2,High,SIT,Collections,Manage collections and dunning,,STORY-019,TS-119,07/Oct/26 9:30 AM,08/Oct/26 9:30 AM,FUT/TUT
+DEF-104,Sample defect DEF-104: unexpected result during SIT testing,To Do,P3,Medium,SIT,Subscription Management,Manage the subscription lifecycle,,STORY-023,TS-123,12/Oct/26 9:30 AM,,
+DEF-105,Sample defect DEF-105: unexpected result during SIT testing,Ready for retest,P4,Low,SIT,Product Management,Maintain product and pricing setup,,STORY-001,TS-129,06/Oct/26 9:30 AM,09/Oct/26 9:30 AM,
+DEF-106,Sample defect DEF-106: unexpected result during SIT testing,Done,P4,Low,SIT,Order Management,Capture and import orders,RICE-I01,STORY-012,TS-140,13/Oct/26 9:30 AM,15/Oct/26 9:30 AM,
+DEF-107,Sample defect DEF-107: unexpected result during SIT testing,To Do,P1,High,SIT,Accounts Receivable,Convert and reconcile data,,STORY-010,TS-110,06/Oct/26 9:30 AM,,
+DEF-108,Sample defect DEF-108: unexpected result during SIT testing,To Do,P3,Medium,SIT,Revenue Management,Recognize revenue,RICE-R02,STORY-027,TS-127,10/Oct/26 9:30 AM,,
+DEF-109,Sample defect DEF-109: unexpected result during SIT testing,In Progress,P3,Medium,SIT,Subscription Management,Manage the subscription lifecycle,RICE-R03,STORY-003,TS-131,01/Oct/26 9:30 AM,,
+DEF-110,Sample defect DEF-110: unexpected result during SIT testing,In Progress,P1,Critical,SIT,Accounts Receivable,Bill and invoice customers,,,,06/Oct/26 9:30 AM,,

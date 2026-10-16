@@ -1,0 +1,41 @@
+Issue key,Summary,Module,Process,RICE ID
+STORY-001,Sample story 1: maintain product and pricing setup,Product Management,Maintain product and pricing setup,
+STORY-002,Sample story 2: capture and import orders,Order Management,Capture and import orders,
+STORY-003,Sample story 3: manage the subscription lifecycle,Subscription Management,Manage the subscription lifecycle,RICE-R03
+STORY-004,Sample story 4: calculate us sales and use tax,Vertex integration (US B2B sales/use tax),Calculate US sales and use tax,
+STORY-005,Sample story 5: calculate european vat,Cloud Tax for European VAT,Calculate European VAT,
+STORY-006,Sample story 6: bill and invoice customers,Accounts Receivable,Bill and invoice customers,RICE-R01
+STORY-007,Sample story 7: recognize revenue,Revenue Management,Recognize revenue,
+STORY-008,Sample story 8: apply receipts and reconcile cash,Cash Management,Apply receipts and reconcile cash,
+STORY-009,Sample story 9: manage collections and dunning,Collections,Manage collections and dunning,RICE-I06
+STORY-010,Sample story 10: convert and reconcile data,Accounts Receivable,Convert and reconcile data,
+STORY-011,Sample story 11: maintain product and pricing setup,Product Management,Maintain product and pricing setup,
+STORY-012,Sample story 12: capture and import orders,Order Management,Capture and import orders,RICE-I01
+STORY-013,Sample story 13: manage the subscription lifecycle,Subscription Management,Manage the subscription lifecycle,
+STORY-014,Sample story 14: calculate us sales and use tax,Vertex integration (US B2B sales/use tax),Calculate US sales and use tax,
+STORY-015,Sample story 15: calculate european vat,Cloud Tax for European VAT,Calculate European VAT,RICE-E05
+STORY-016,Sample story 16: bill and invoice customers,Accounts Receivable,Bill and invoice customers,
+STORY-017,Sample story 17: recognize revenue,Revenue Management,Recognize revenue,
+STORY-018,Sample story 18: apply receipts and reconcile cash,Cash Management,Apply receipts and reconcile cash,RICE-I05
+STORY-019,Sample story 19: manage collections and dunning,Collections,Manage collections and dunning,
+STORY-020,Sample story 20: convert and reconcile data,Accounts Receivable,Convert and reconcile data,
+STORY-021,Sample story 21: maintain product and pricing setup,Product Management,Maintain product and pricing setup,RICE-I03
+STORY-022,Sample story 22: capture and import orders,Order Management,Capture and import orders,
+STORY-023,Sample story 23: manage the subscription lifecycle,Subscription Management,Manage the subscription lifecycle,
+STORY-024,Sample story 24: calculate us sales and use tax,Vertex integration (US B2B sales/use tax),Calculate US sales and use tax,RICE-I02
+STORY-025,Sample story 25: calculate european vat,Cloud Tax for European VAT,Calculate European VAT,
+STORY-026,Sample story 26: bill and invoice customers,Accounts Receivable,Bill and invoice customers,
+STORY-027,Sample story 27: recognize revenue,Revenue Management,Recognize revenue,RICE-R02
+STORY-028,Sample story 28: apply receipts and reconcile cash,Cash Management,Apply receipts and reconcile cash,
+STORY-029,Sample story 29: manage collections and dunning,Collections,Manage collections and dunning,
+STORY-030,Sample story 30: convert and reconcile data,Accounts Receivable,Convert and reconcile data,RICE-R01
+STORY-031,Sample story 31: maintain product and pricing setup,Product Management,Maintain product and pricing setup,
+STORY-032,Sample story 32: capture and import orders,Order Management,Capture and import orders,
+STORY-033,Sample story 33: manage the subscription lifecycle,Subscription Management,Manage the subscription lifecycle,RICE-R03
+STORY-034,Sample story 34: calculate us sales and use tax,Vertex integration (US B2B sales/use tax),Calculate US sales and use tax,
+STORY-035,Sample story 35: calculate european vat,Cloud Tax for European VAT,Calculate European VAT,
+STORY-036,Sample story 36: bill and invoice customers,Accounts Receivable,Bill and invoice customers,RICE-R01
+STORY-037,Sample story 37: recognize revenue,Revenue Management,Recognize revenue,
+STORY-038,Sample story 38: apply receipts and reconcile cash,Cash Management,Apply receipts and reconcile cash,
+STORY-039,Sample story 39: manage collections and dunning,Collections,Manage collections and dunning,RICE-I06
+STORY-040,Sample story 40: convert and reconcile data,Accounts Receivable,Convert and reconcile data,
